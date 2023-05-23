@@ -11,7 +11,9 @@ import SwiftUI
 struct Sopa_de_LetrinhasApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                ContentView()
+            }
         }
     }
 }
