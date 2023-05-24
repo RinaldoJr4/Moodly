@@ -15,7 +15,7 @@ fileprivate extension DateFormatter {
     }
     static var monthAndYear: DateFormatter {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM yyyy"
+        formatter.dateFormat = "yyyy"
         return formatter
     }
 }
@@ -91,8 +91,7 @@ struct MonthView<DateView>: View where DateView: View {
         )
     }
     private var header: some View {
-        let component = calendar.component(.month, from: month)
-        let formatter = component == 1 ? DateFormatter.monthAndYear : .month
+        let formatter = DateFormatter.month
         return Text(formatter.string(from: month))
             .font(.title)
             .padding()
@@ -125,7 +124,7 @@ struct CalendarView<DateView>: View where DateView: View {
             matching: DateComponents(day: 1, hour: 0, minute: 0, second: 0)
         )
     }
-    @State var i = 0
+
     var body: some View {
         ScrollViewReader { value in
             ScrollView(.vertical, showsIndicators: false) {
@@ -144,38 +143,52 @@ struct CalendarView<DateView>: View where DateView: View {
 }
 struct RootView: View {
     @Environment(\.calendar) var calendar
+    @State var yearTitle = ""
+    @State var CurrentYear: Date = .now
+    let formater = DateFormatter.monthAndYear
     private var year: DateInterval {
         calendar.dateInterval(of: .year, for: Date())!
     }
     var body: some View {
-        CalendarView(interval: year) { date in
-            if String(self.calendar.component(.day, from: date)) ==
-                String(Date.now.formatted(date: .numeric, time: .shortened).prefix(2))
-                &&
-                String(self.calendar.component(.month, from: date)) ==
-                String(Int(String(Date.now.formatted(date: .numeric, time: .shortened).dropFirst(3).dropLast(11)))!) {
-                // Mds que gambiarra SORRY
-                
-                Text("30")
-                    .hidden()
-                    .padding(20)
-                    .background(.blue)
-                    .clipShape(Circle())
-                    .padding(.vertical, 4)
-                    .overlay(
-                        Text(String(self.calendar.component(.day, from: date)))
-                    )
-            } else {
-                Text("30")
-                    .hidden()
-                    .padding(20)
-                    .background(Color(white: 0.1))
-                    .clipShape(Circle())
-                    .padding(.vertical, 4)
-                    .overlay(
-                        Text(String(self.calendar.component(.day, from: date)))
-                    )
-            }
+        ZStack {
+            CalendarView(interval: year) { date in
+/*                if String(self.calendar.component(.day, from: date)) ==
+                    String(Date.now.formatted(date: .numeric, time: .shortened).prefix(2))
+                    &&
+                    String(self.calendar.component(.month, from: date)) ==
+                    String(Int(String(Date.now.formatted(date: .numeric, time: .shortened).dropFirst(3).dropLast(11)))!) { */
+                // Mds que gambiarra  que eu tinha feito, era só isso:
+                if calendar.isDateInToday(date){
+                    
+                    
+                    Text("30")
+                        .hidden()
+                        .padding(20)
+                        .background(.blue)
+                        .clipShape(Circle())
+                        .padding(.vertical, 4)
+                        .overlay(
+                            Text(String(self.calendar.component(.day, from: date)))
+                        )
+                } else {
+                    Text("30")
+                        .hidden()
+                        .padding(20)
+                        .background(Color(white: 0.1))
+                        .clipShape(Circle())
+                        .padding(.vertical, 4)
+                        .overlay(
+                            Text(String(self.calendar.component(.day, from: date)))
+                        )
+                        .onAppear(){
+                            yearTitle = String(self.calendar.component(.year, from: date))
+                        }
+                }
+//                Button("Next Year", action: {
+//                    calendar.component(.year, from: CurrentYear) += 1 // <- Queria fazer isso
+//                })
+            }.navigationTitle(yearTitle)
+            // Se quiser mudar o ano que está sendo mostrado no titulo tem que bulir aqui!
         }
     }
 }
