@@ -13,6 +13,7 @@
 		D36004F92A02C2DC004E19CF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D36004F82A02C2DC004E19CF /* Preview Assets.xcassets */; };
 		D39D6D3F2A1CFE7300FA63E9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39D6D3E2A1CFE7300FA63E9 /* ViewModel.swift */; };
 		D3CE73162A1D733B004F91A8 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CE73152A1D733B004F91A8 /* OnboardingView.swift */; };
+		D3D81DE72A1E55E30010A554 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D81DE62A1E55E30010A554 /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		D36004F82A02C2DC004E19CF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D39D6D3E2A1CFE7300FA63E9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		D3CE73152A1D733B004F91A8 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		D3D81DE62A1E55E30010A554 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				D36004F32A02C2DB004E19CF /* ContentView.swift */,
 				D39D6D3E2A1CFE7300FA63E9 /* ViewModel.swift */,
 				D3CE73152A1D733B004F91A8 /* OnboardingView.swift */,
+				D3D81DE62A1E55E30010A554 /* File.swift */,
 				D36004F52A02C2DC004E19CF /* Assets.xcassets */,
 				D36004F72A02C2DC004E19CF /* Preview Content */,
 			);
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3D81DE72A1E55E30010A554 /* File.swift in Sources */,
 				D36004F42A02C2DB004E19CF /* ContentView.swift in Sources */,
 				D3CE73162A1D733B004F91A8 /* OnboardingView.swift in Sources */,
 				D36004F22A02C2DB004E19CF /* Sopa_de_LetrinhasApp.swift in Sources */,

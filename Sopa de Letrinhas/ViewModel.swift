@@ -25,7 +25,7 @@ final class ViewModel: ObservableObject {
 
 struct CalendarioView: View {
     var body: some View {
-        Text("Calendario")
+        RootView()
     }
 }
 
