@@ -16,15 +16,26 @@ struct OnboardingView: View {
     var body: some View {
         NavigationStack {
             ZStack{
-                Rectangle().frame(width: 500, height: 500).foregroundColor(.black)
+                Rectangle().frame(width: 500, height: 500).foregroundColor(.gray)
                 
                 VStack{
-                    Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+                    Text("Onboarding oi como vai")
+                        .foregroundColor(.black)
+                        .fontWeight(.bold)
+                        .font(.title)
                     
-                    Button("Sair", action: {
+                    Button(action: {
                         presentation.wrappedValue.dismiss()
                         didOnboardingHappend.toggle()
-                    })
+                    }, label: {
+                        ZStack {
+                            Rectangle().frame(width: 100, height: 50)
+                                .cornerRadius(16)
+                            Text("SAI!")
+                                .foregroundColor(.white)
+                                .font(.largeTitle)
+                        }
+                    }).buttonStyle(.borderless)
                     
                 }
             }
