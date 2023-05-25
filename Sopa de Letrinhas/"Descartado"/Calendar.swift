@@ -94,7 +94,7 @@ struct MonthView<DateView>: View where DateView: View {
         let formatter = DateFormatter.month
         return Text(formatter.string(from: month))
             .font(.title)
-            .padding()
+            .minimumScaleFactor(0.1)
     }
     var body: some View {
             VStack {
@@ -135,7 +135,8 @@ struct CalendarView<DateView>: View where DateView: View {
                     }
                 }
             }.onAppear() {
-                value.scrollTo(Int(String(Date.now.formatted(date: .numeric, time: .shortened).dropFirst(3).dropLast(11)))!)
+//                value.scrollTo(Int(String(Date.now.formatted(date: .numeric, time: .shortened).dropFirst(3).dropLast(10)))!)
+                value.scrollTo(5)
             }
             
         }
@@ -145,6 +146,7 @@ struct RootView: View {
     @Environment(\.calendar) var calendar
     @State var yearTitle = ""
     @State var CurrentYear: Date = .now
+//    @State var size : CGSize
     let formater = DateFormatter.monthAndYear
     private var year: DateInterval {
         calendar.dateInterval(of: .year, for: Date())!
@@ -163,22 +165,22 @@ struct RootView: View {
                     
                     Text("30")
                         .hidden()
-                        .padding(20)
+                        .padding()
                         .background(.blue)
                         .clipShape(Circle())
-                        .padding(.vertical, 4)
                         .overlay(
                             Text(String(self.calendar.component(.day, from: date)))
+                                .minimumScaleFactor(0.1)
                         )
                 } else {
                     Text("30")
                         .hidden()
-                        .padding(20)
+                        .padding()
                         .background(Color(white: 0.1))
                         .clipShape(Circle())
-                        .padding(.vertical, 4)
                         .overlay(
                             Text(String(self.calendar.component(.day, from: date)))
+                                .minimumScaleFactor(0.1)
                         )
                         .onAppear(){
                             yearTitle = String(self.calendar.component(.year, from: date))
@@ -188,6 +190,7 @@ struct RootView: View {
 //                    calendar.component(.year, from: CurrentYear) += 1 // <- Queria fazer isso
 //                })
             }.navigationTitle(yearTitle)
+//                .frame(width: size.width, height: size.height)
             // Se quiser mudar o ano que está sendo mostrado no titulo tem que bulir aqui!
         }
     }

@@ -22,21 +22,3 @@ final class ViewModel: ObservableObject {
     @Published var selectedId: String?
     static let defaultFruits: [Fruit] = ["Calendar", "To-do","Reflex"].map({ Fruit(name: $0) })
 }
-
-struct CalendarioView: View {
-    var body: some View {
-        RootView()
-    }
-}
-
-struct ToDoView: View {
-    var body: some View {
-        Text("To do")
-    }
-}
-
-struct ReflexView: View {
-    var body: some View {
-        Text("Reflex")
-    }
-}

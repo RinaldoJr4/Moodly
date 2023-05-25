@@ -13,7 +13,11 @@
 		D36004F92A02C2DC004E19CF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D36004F82A02C2DC004E19CF /* Preview Assets.xcassets */; };
 		D39D6D3F2A1CFE7300FA63E9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39D6D3E2A1CFE7300FA63E9 /* ViewModel.swift */; };
 		D3CE73162A1D733B004F91A8 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CE73152A1D733B004F91A8 /* OnboardingView.swift */; };
-		D3D81DE72A1E55E30010A554 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D81DE62A1E55E30010A554 /* File.swift */; };
+		D3D81DE72A1E55E30010A554 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D81DE62A1E55E30010A554 /* Calendar.swift */; };
+		D3D81DE92A1F844C0010A554 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D81DE82A1F844C0010A554 /* MainView.swift */; };
+		D3D81DEC2A1F95DB0010A554 /* CalendarioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D81DEB2A1F95DB0010A554 /* CalendarioView.swift */; };
+		D3D81DEE2A1F961E0010A554 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D81DED2A1F961E0010A554 /* StatusView.swift */; };
+		D3D81DF02A1F964E0010A554 /* LembretesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D81DEF2A1F964E0010A554 /* LembretesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +28,11 @@
 		D36004F82A02C2DC004E19CF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D39D6D3E2A1CFE7300FA63E9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		D3CE73152A1D733B004F91A8 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		D3D81DE62A1E55E30010A554 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		D3D81DE62A1E55E30010A554 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		D3D81DE82A1F844C0010A554 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		D3D81DEB2A1F95DB0010A554 /* CalendarioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarioView.swift; sourceTree = "<group>"; };
+		D3D81DED2A1F961E0010A554 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
+		D3D81DEF2A1F964E0010A554 /* LembretesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LembretesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +66,12 @@
 			isa = PBXGroup;
 			children = (
 				D36004F12A02C2DB004E19CF /* Sopa_de_LetrinhasApp.swift */,
-				D36004F32A02C2DB004E19CF /* ContentView.swift */,
-				D39D6D3E2A1CFE7300FA63E9 /* ViewModel.swift */,
 				D3CE73152A1D733B004F91A8 /* OnboardingView.swift */,
-				D3D81DE62A1E55E30010A554 /* File.swift */,
+				D3D81DE82A1F844C0010A554 /* MainView.swift */,
+				D3D81DED2A1F961E0010A554 /* StatusView.swift */,
+				D3D81DEB2A1F95DB0010A554 /* CalendarioView.swift */,
+				D3D81DEF2A1F964E0010A554 /* LembretesView.swift */,
+				D3D81DEA2A1F95680010A554 /* "Descartado" */,
 				D36004F52A02C2DC004E19CF /* Assets.xcassets */,
 				D36004F72A02C2DC004E19CF /* Preview Content */,
 			);
@@ -74,6 +84,16 @@
 				D36004F82A02C2DC004E19CF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D3D81DEA2A1F95680010A554 /* "Descartado" */ = {
+			isa = PBXGroup;
+			children = (
+				D36004F32A02C2DB004E19CF /* ContentView.swift */,
+				D39D6D3E2A1CFE7300FA63E9 /* ViewModel.swift */,
+				D3D81DE62A1E55E30010A554 /* Calendar.swift */,
+			);
+			path = "\"Descartado\"";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,9 +166,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3D81DE72A1E55E30010A554 /* File.swift in Sources */,
+				D3D81DE92A1F844C0010A554 /* MainView.swift in Sources */,
+				D3D81DE72A1E55E30010A554 /* Calendar.swift in Sources */,
+				D3D81DEE2A1F961E0010A554 /* StatusView.swift in Sources */,
 				D36004F42A02C2DB004E19CF /* ContentView.swift in Sources */,
 				D3CE73162A1D733B004F91A8 /* OnboardingView.swift in Sources */,
+				D3D81DF02A1F964E0010A554 /* LembretesView.swift in Sources */,
+				D3D81DEC2A1F95DB0010A554 /* CalendarioView.swift in Sources */,
 				D36004F22A02C2DB004E19CF /* Sopa_de_LetrinhasApp.swift in Sources */,
 				D39D6D3F2A1CFE7300FA63E9 /* ViewModel.swift in Sources */,
 			);

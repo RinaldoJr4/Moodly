@@ -25,17 +25,17 @@ struct ContentView: View {
                             VStack{
                                 
                                 if name == "Calendar" {
-                                    CalendarioView()
+                                    MainView()
                                 }
-                                else if name == "To-do"{
-                                    ToDoView()
-                                }
-                                else {
-                                    ReflexView()
-                                }
+//                                else if name == "To-do"{
+//                                    ToDoView()
+//                                }
+//                                else {
+//                                    ReflexView()
+//                                }
                                 
-                                //                            Text(item.name)
-                                //                                .navigationTitle(item.name)
+//                            Text(item.name)
+//                                .navigationTitle(item.name)
                                 
                             }.onAppear(){
                                 name = item.name
@@ -53,7 +53,7 @@ struct ContentView: View {
                 }
             }
             // Para caso a SideBar tenha sido fechada inicialmente pelo usuário
-            CalendarioView()
+            MainView()
         }
         .navigationViewStyle(DoubleColumnNavigationViewStyle())
         .onAppear(){

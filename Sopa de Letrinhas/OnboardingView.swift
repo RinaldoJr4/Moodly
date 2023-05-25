@@ -8,11 +8,25 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    
+    @Environment(\.presentationMode) var presentation
+    @AppStorage("onboarding") var didOnboardingHappend = false
+
+    
     var body: some View {
         NavigationStack {
-            VStack{
-                Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-                NavigationLink(destination: ContentView(), label: {Text("Sair do Onboarding")})
+            ZStack{
+                Rectangle().frame(width: 500, height: 500).foregroundColor(.black)
+                
+                VStack{
+                    Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+                    
+                    Button("Sair", action: {
+                        presentation.wrappedValue.dismiss()
+                        didOnboardingHappend.toggle()
+                    })
+                    
+                }
             }
         }
     }

@@ -10,16 +10,14 @@ import SwiftUI
 @main
 struct Sopa_de_LetrinhasApp: App {
     
-    @AppStorage("onboarding") var didOnboardingHappend = false
-    
     var body: some Scene {
         WindowGroup {
-            if didOnboardingHappend {
-                ContentView()
-            }
-            else {
-                OnboardingView()
-            }
+//            if didOnboardingHappend {
+                MainView()
+//            }
+//            else {
+//                OnboardingView()
+//            }
         }
     }
 }
