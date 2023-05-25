@@ -17,6 +17,7 @@ struct MainView: View {
             HStack{
                 ZStack{
                     Rectangle()
+                    BoardView()
                 }
                 .frame(width: geo.size.width/1.3)
                 VStack{

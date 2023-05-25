@@ -18,8 +18,7 @@ struct  CalendarioView: View {
                         .font(.largeTitle)
                         .bold()
                         .foregroundColor(.black)
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.1)
+                        .minimumScaleFactor(0.7)
                         .padding(.leading, 5)
                     Spacer()
                 }

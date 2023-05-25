@@ -18,6 +18,7 @@
 		D3D81DEC2A1F95DB0010A554 /* CalendarioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D81DEB2A1F95DB0010A554 /* CalendarioView.swift */; };
 		D3D81DEE2A1F961E0010A554 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D81DED2A1F961E0010A554 /* StatusView.swift */; };
 		D3D81DF02A1F964E0010A554 /* LembretesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D81DEF2A1F964E0010A554 /* LembretesView.swift */; };
+		D3D81DF22A1FA4EE0010A554 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D81DF12A1FA4EE0010A554 /* BoardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		D3D81DEB2A1F95DB0010A554 /* CalendarioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarioView.swift; sourceTree = "<group>"; };
 		D3D81DED2A1F961E0010A554 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		D3D81DEF2A1F964E0010A554 /* LembretesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LembretesView.swift; sourceTree = "<group>"; };
+		D3D81DF12A1FA4EE0010A554 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				D36004F12A02C2DB004E19CF /* Sopa_de_LetrinhasApp.swift */,
 				D3CE73152A1D733B004F91A8 /* OnboardingView.swift */,
 				D3D81DE82A1F844C0010A554 /* MainView.swift */,
+				D3D81DF12A1FA4EE0010A554 /* BoardView.swift */,
 				D3D81DED2A1F961E0010A554 /* StatusView.swift */,
 				D3D81DEB2A1F95DB0010A554 /* CalendarioView.swift */,
 				D3D81DEF2A1F964E0010A554 /* LembretesView.swift */,
@@ -173,6 +176,7 @@
 				D3CE73162A1D733B004F91A8 /* OnboardingView.swift in Sources */,
 				D3D81DF02A1F964E0010A554 /* LembretesView.swift in Sources */,
 				D3D81DEC2A1F95DB0010A554 /* CalendarioView.swift in Sources */,
+				D3D81DF22A1FA4EE0010A554 /* BoardView.swift in Sources */,
 				D36004F22A02C2DB004E19CF /* Sopa_de_LetrinhasApp.swift in Sources */,
 				D39D6D3F2A1CFE7300FA63E9 /* ViewModel.swift in Sources */,
 			);
