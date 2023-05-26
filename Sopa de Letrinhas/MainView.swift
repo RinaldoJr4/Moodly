@@ -35,7 +35,7 @@ struct MainView: View {
                     }.padding(10)
                 }
             }.padding()
-                .sheet(isPresented: $shouldShow, content: {OnboardingView()})
+                .sheet(isPresented: $shouldShow, content: {MoodView()})
         }.onAppear(){
 //            if !didOnboardingHappend {
                 shouldShow.toggle()
