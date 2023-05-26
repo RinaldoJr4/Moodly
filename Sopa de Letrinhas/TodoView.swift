@@ -21,7 +21,7 @@ enum Sections: String, CaseIterable {
 struct TodoView: View {
     
 //    @AppStorage("tasks") var tasksStored : [String] = [""]
-    @State var tasks: [Task] = [Task(name: "teste",isCompleted: false),Task(name: "teste",isCompleted: false),Task(name: "teste",isCompleted: false),Task(name: "teste",isCompleted: false),Task(name: "teste",isCompleted: false),Task(name: "teste",isCompleted: false),Task(name: "teste",isCompleted: false),Task(name: "teste",isCompleted: false),Task(name: "teste",isCompleted: false),Task(name: "teste",isCompleted: false),Task(name: "teste",isCompleted: false),Task(name: "teste",isCompleted: false)]
+    @State var tasks: [Task] = [Task(name: "teste",isCompleted: false),Task(name: "teste",isCompleted: false),Task(name: "teste",isCompleted: false),Task(name: "teste",isCompleted: false),Task(name: "teste",isCompleted: false),Task(name: "teste",isCompleted: false),Task(name: "teste",isCompleted: false),Task(name: "teste",isCompleted: false),Task(name: "teste",isCompleted: false),Task(name: "teste",isCompleted: false)]
     
     var pendingTask: [Binding<Task>] {
         $tasks.filter { !$0.isCompleted.wrappedValue }

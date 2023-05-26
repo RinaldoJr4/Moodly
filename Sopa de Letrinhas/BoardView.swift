@@ -57,7 +57,8 @@ struct BoardView: View {
                             }.padding(.trailing, geo.size.width/30)
                         }
                         
-                        Spacer().layoutPriority(200).frame(height: geo.size.height/5)
+                        Spacer().layoutPriority(200)
+                        Spacer().layoutPriority(200).frame(height: geo.size.height/6)
                         ZStack{
                             VStack{
                                 HStack{
