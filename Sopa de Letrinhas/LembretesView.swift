@@ -18,12 +18,13 @@ struct  LembretesView: View {
                         .bold()
                         .foregroundColor(.black)
                         .minimumScaleFactor(0.7)
-                        .padding(.leading, 5)
+                        .padding(.leading,geo.size.width/32)
                     Spacer()
                 }
-                .padding(.vertical,geo.size.height/8)
+                .padding(.top,geo.size.height/30)
                 
                 Rectangle().foregroundColor(.gray)
+                    .padding(.top,-10)
             }
         }
     }
