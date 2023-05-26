@@ -57,7 +57,7 @@ struct BoardView: View {
                             }.padding(.trailing, geo.size.width/30)
                         }
                         
-                        Spacer().layoutPriority(200)
+                        Spacer().layoutPriority(200).frame(height: geo.size.height/5)
                         ZStack{
                             VStack{
                                 HStack{
@@ -120,9 +120,9 @@ struct BoardView: View {
                             }
                         }.layoutPriority(90)
                     }.padding()
-                }
-            }.clipped()
-        }.scrollIndicators(.hidden)
+                }.clipped()
+            }.scrollIndicators(.hidden)
+        }
     }
 }
 
