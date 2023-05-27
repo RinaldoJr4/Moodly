@@ -9,6 +9,8 @@ import SwiftUI
 
 struct  LembretesView: View {
     
+    @State var shouldShow = false
+    
     var body: some View {
         GeometryReader { geo in
             VStack {
@@ -25,7 +27,9 @@ struct  LembretesView: View {
                 
                 Rectangle().foregroundColor(.gray)
                     .padding(.top,-10)
-            }
+            }.onTapGesture {
+                shouldShow.toggle()
+            }.sheet(isPresented: $shouldShow, content: {LembretePopUpView()})
         }
     }
 }

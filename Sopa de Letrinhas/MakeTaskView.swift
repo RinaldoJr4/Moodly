@@ -9,7 +9,8 @@ import SwiftUI
 
 struct MakeTaskView: View {
     
-    @Environment(\.presentationMode) var presentation
+    @Environment(\.dismiss) var presentation
+    
     @Binding var tasks: [Task]
     @State var taskName = ""
     var currentDate: Date
@@ -23,7 +24,7 @@ struct MakeTaskView: View {
                 HStack {
                     Spacer()
                     Button {
-                        presentation.wrappedValue.dismiss()
+                        presentation.callAsFunction()
                     } label: {
                         Text("X")
                             .font(.title)
@@ -40,6 +41,7 @@ struct MakeTaskView: View {
                     .foregroundColor(.black)
                 Spacer()
                 TextField("escreva o nome da tarefa...", text: $taskName)
+                    .font(.title2)
                     .foregroundColor(.black)
                     .padding()
                     .border(.black,width: 2)
@@ -49,7 +51,7 @@ struct MakeTaskView: View {
                 Spacer()
                 Button(action: {
                     if taskName != "" {
-                        presentation.wrappedValue.dismiss()
+                        presentation.callAsFunction()
                         tasks.append(Task(name: taskName,creationDate: currentDate))
                     }
                 }, label: {

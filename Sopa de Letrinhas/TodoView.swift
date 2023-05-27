@@ -38,21 +38,34 @@ struct TodoView: View {
     
     var body: some View {
         VStack {
-            List(Sections.allCases,id: \.self){ section in
-                ForEach(section == .pending ? pendingTask : completedTask){ $task in
-                    TaskViewCell(task: $task).onChange(of: tasks) { newValue in
-                        for task in tasks {
-                            if task.isDeleted {
-                                let taskToDelete = task
-                                tasks = tasks.filter { $0.id != taskToDelete.id }
+            if tasks.count != 0 {
+                List(Sections.allCases,id: \.self){ section in
+                    ForEach(section == .pending ? pendingTask : completedTask){ $task in
+                        TaskViewCell(task: $task).onChange(of: tasks) { newValue in
+                            for task in tasks {
+                                if task.isDeleted {
+                                    let taskToDelete = task
+                                    tasks = tasks.filter { $0.id != taskToDelete.id }
+                                    print(tasks.count)
+                                }
                             }
                         }
                     }
+                }.listStyle(.plain)
+                    .frame(height: CGFloat(tasks.count) * 53)
+                    .scrollContentBackground(.hidden)
+                    .layoutPriority(2)
+            }
+            else {
+                HStack {
+                    Text("Você ainda não tem nenhuma atividade")
+                        .font(.title2)
+                        .foregroundColor(.gray)
+                        .layoutPriority(2)
+                        .padding()
+                    Spacer()
                 }
-            }.listStyle(.plain)
-                .frame(height: CGFloat(tasks.count) * 53)
-                .scrollContentBackground(.hidden)
-                .layoutPriority(2)
+            }
             HStack {
                 Button(action: {
                     shouldShow.toggle()
@@ -96,11 +109,11 @@ struct TaskViewCell : View {
                     .strikethrough(task.isCompleted,color: .black)
                     .padding(.leading, 10)
                 Spacer()
-//                Image(systemName: "x.circle")
-//                    .resizable()
-//                    .scaledToFit()
-//                    .foregroundColor(.gray)
-//                    .padding(12)
+                //                Image(systemName: "x.circle")
+                //                    .resizable()
+                //                    .scaledToFit()
+                //                    .foregroundColor(.gray)
+                //                    .padding(12)
                 Text("X")
                     .foregroundColor(.gray)
                     .font(.title)
