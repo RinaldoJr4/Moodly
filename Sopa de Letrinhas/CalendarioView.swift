@@ -8,13 +8,23 @@
 import SwiftUI
 
 struct  CalendarioView: View {
+    
     @State var size = CGSize()
+    
+    let daysOfTheWeek = ["","Domingo","Segunda-feira","Terça-feira","Quarta-feira","Quinta-feira","Sexta-feira","Sábado"]
+    let today  = Date.now
+    var todayCalendar = Calendar.current
+    var formatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH"
+        return formatter
+    }
     
     var body: some View {
         GeometryReader { geo in
             VStack {
                 HStack {
-                    Text("Calendario")
+                    Text(daysOfTheWeek[todayCalendar.component(.weekday, from: today)])
                         .font(.largeTitle)
                         .bold()
                         .foregroundColor(.black)
@@ -24,8 +34,19 @@ struct  CalendarioView: View {
                 }
                 .padding(.top,geo.size.height/30)
                 
-                Rectangle().foregroundColor(.gray)
-                    .padding(.top,-10)
+                if ((Int(formatter.string(from: today)) ?? 0) <= 12) {
+                    // Madrugada
+                    Rectangle().foregroundColor(.orange)
+                        .padding(.top,-10)
+                } else if ((Int(formatter.string(from: today)) ?? 0) >= 18){
+                    // Noite
+                    Rectangle().foregroundColor(.blue)
+                        .padding(.top,-10)
+                } else {
+                    // Dia
+                    Rectangle().foregroundColor(.yellow)
+                        .padding(.top,-10)
+                }
             }
         }
     }
