@@ -32,7 +32,7 @@ struct BoardView: View {
                             Spacer()
                         }
                         
-                        TodoView()
+                        TodoView(currentDate: currentDate)
                         
                         
                     }.padding()

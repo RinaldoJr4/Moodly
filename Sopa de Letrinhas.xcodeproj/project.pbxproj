@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D35A6E232A226BB400513FFF /* MakeTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35A6E222A226BB400513FFF /* MakeTaskView.swift */; };
 		D36004F22A02C2DB004E19CF /* Sopa_de_LetrinhasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36004F12A02C2DB004E19CF /* Sopa_de_LetrinhasApp.swift */; };
 		D36004F42A02C2DB004E19CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36004F32A02C2DB004E19CF /* ContentView.swift */; };
 		D36004F62A02C2DC004E19CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D36004F52A02C2DC004E19CF /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D35A6E222A226BB400513FFF /* MakeTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeTaskView.swift; sourceTree = "<group>"; };
 		D36004EE2A02C2DB004E19CF /* Sopa de Letrinhas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sopa de Letrinhas.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D36004F12A02C2DB004E19CF /* Sopa_de_LetrinhasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sopa_de_LetrinhasApp.swift; sourceTree = "<group>"; };
 		D36004F32A02C2DB004E19CF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				D3D81DEB2A1F95DB0010A554 /* CalendarioView.swift */,
 				D3D81DEF2A1F964E0010A554 /* LembretesView.swift */,
 				D3BC2AD42A21425D00BA6B2D /* TodoView.swift */,
+				D35A6E222A226BB400513FFF /* MakeTaskView.swift */,
 				D3D81DEA2A1F95680010A554 /* "Descartado" */,
 				D36004F52A02C2DC004E19CF /* Assets.xcassets */,
 				D36004F72A02C2DC004E19CF /* Preview Content */,
@@ -181,6 +184,7 @@
 				D3D81DEC2A1F95DB0010A554 /* CalendarioView.swift in Sources */,
 				D3D81DF22A1FA4EE0010A554 /* BoardView.swift in Sources */,
 				D36004F22A02C2DB004E19CF /* Sopa_de_LetrinhasApp.swift in Sources */,
+				D35A6E232A226BB400513FFF /* MakeTaskView.swift in Sources */,
 				D3BC2AD52A21425D00BA6B2D /* TodoView.swift in Sources */,
 				D39D6D3F2A1CFE7300FA63E9 /* ViewModel.swift in Sources */,
 			);
