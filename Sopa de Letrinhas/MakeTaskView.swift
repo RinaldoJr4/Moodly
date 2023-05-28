@@ -57,7 +57,7 @@ struct MakeTaskView: View {
                 Button(action: {
                     if taskName != "" {
                         presentation.callAsFunction()
-                        tasks.append(Task(name: taskName,creationDate: currentDate))
+                        tasks.append(Task(name: taskName,creationDate: currentDate, index: tasks.count))
                         namessStored.append(taskName)
                         isDeletedsStored.append(false)
                         isCompletedsStored.append(false)

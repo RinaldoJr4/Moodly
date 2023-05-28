@@ -13,6 +13,7 @@ struct Task: Identifiable, Equatable, Decodable, Encodable {
     var isCompleted = false
     var isDeleted = false
     var creationDate = Date()
+    var index: Int
 }
 
 enum Sections: String, CaseIterable {
@@ -23,13 +24,14 @@ enum Sections: String, CaseIterable {
 struct TodoView: View {
     
 //    @AppStorage("tasks") var tasksStored =  [Task(name: "teste1",isCompleted: false)].rawValue
-    @State var tasks: [Task] = [Task(name: "teste1",isCompleted: false)]
+    @State var tasks: [Task] = [Task(name: "teste1",isCompleted: false, index: 0)]
     @State var shouldShow = false
 //    @AppStorage("ids") var idsStored: [UUID] = [UUID()]
     @AppStorage("names") var namessStored : [String] = ["Teste Persistencia"]
     @AppStorage("isCompleteds") var isCompletedsStored : [Bool] = [false]
     @AppStorage("isDeleteds") var isDeletedsStored : [Bool] = [false]
     @AppStorage("creationDates") var creationDatesStored : [Date] = [Date()]
+    @State var count = 0
 
     
     var currentDate: Date
@@ -55,12 +57,14 @@ struct TodoView: View {
                                         tasks = tasks.filter { $0.id != taskToDelete.id }
                                     }
                                 }
-                                for i in 0...namessStored.count-1 {
+                                count = namessStored.count-1
+                                for i in 0...count {
                                     if isDeletedsStored[i] && isDeletedsStored.count != 1 {
                                         namessStored.remove(at: i)
                                         isDeletedsStored.remove(at: i)
                                         isCompletedsStored.remove(at: i)
                                         creationDatesStored.remove(at: i)
+                                        break
                                     }
                                     else if isDeletedsStored[i] && isDeletedsStored.count == 1 {
                                         namessStored = ["savestore"]
@@ -111,6 +115,7 @@ struct TodoView: View {
             Spacer().layoutPriority(2)
                 .onAppear {
                     tasks.removeFirst()
+                    
                     for i in 0...namessStored.count-1 {
                         if isDeletedsStored[i] {
                             namessStored.remove(at: i)
@@ -118,7 +123,7 @@ struct TodoView: View {
                             isCompletedsStored.remove(at: i)
                             creationDatesStored.remove(at: i)
                         } else {
-                            tasks.append(Task(name: namessStored[i],isCompleted: isCompletedsStored[i],isDeleted: isDeletedsStored[i],creationDate: creationDatesStored[i]))
+                            tasks.append(Task(name: namessStored[i],isCompleted: isCompletedsStored[i],isDeleted: isDeletedsStored[i],creationDate: creationDatesStored[i], index: tasks.count))
                         }
                     }
                 }
@@ -162,6 +167,7 @@ struct TaskViewCell : View {
                     .padding(.trailing, 15)
                     .onTapGesture {
                         task.isDeleted.toggle()
+                        isDeletedsStored[task.index] = true
                     }
             }.padding(.leading, 10)
                 .frame(height: 45)
