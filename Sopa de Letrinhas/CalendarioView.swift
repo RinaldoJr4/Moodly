@@ -34,7 +34,7 @@ struct  CalendarioView: View {
                 }
                 .padding(.top,geo.size.height/30)
                 
-                if ((Int(formatter.string(from: today)) ?? 0) <= 12) {
+                if ((Int(formatter.string(from: today)) ?? 0) <= 11) {
                     // Madrugada
                     Rectangle().foregroundColor(.orange)
                         .padding(.top,-10)

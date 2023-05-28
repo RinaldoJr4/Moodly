@@ -35,7 +35,7 @@ struct MakeTaskView: View {
             }
             
             VStack {
-                Text("Status")
+                Text("Nova Tarefa")
                     .font(.largeTitle)
                     .bold()
                     .foregroundColor(.black)
