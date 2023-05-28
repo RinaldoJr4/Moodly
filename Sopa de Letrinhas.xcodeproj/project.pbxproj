@@ -13,6 +13,7 @@
 		D36004F42A02C2DB004E19CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36004F32A02C2DB004E19CF /* ContentView.swift */; };
 		D36004F62A02C2DC004E19CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D36004F52A02C2DC004E19CF /* Assets.xcassets */; };
 		D36004F92A02C2DC004E19CF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D36004F82A02C2DC004E19CF /* Preview Assets.xcassets */; };
+		D36E1B622A23B89600923515 /* Moodly.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D36E1B602A23B89600923515 /* Moodly.xcdatamodeld */; };
 		D39D6D3F2A1CFE7300FA63E9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39D6D3E2A1CFE7300FA63E9 /* ViewModel.swift */; };
 		D3BC2AD52A21425D00BA6B2D /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BC2AD42A21425D00BA6B2D /* TodoView.swift */; };
 		D3CE73162A1D733B004F91A8 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CE73152A1D733B004F91A8 /* OnboardingView.swift */; };
@@ -32,6 +33,7 @@
 		D36004F32A02C2DB004E19CF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D36004F52A02C2DC004E19CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D36004F82A02C2DC004E19CF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D36E1B612A23B89600923515 /* Moodly.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Moodly.xcdatamodel; sourceTree = "<group>"; };
 		D39D6D3E2A1CFE7300FA63E9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		D3BC2AD42A21425D00BA6B2D /* TodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
 		D3CE73152A1D733B004F91A8 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				D36004F12A02C2DB004E19CF /* Sopa_de_LetrinhasApp.swift */,
+				D36E1B602A23B89600923515 /* Moodly.xcdatamodeld */,
 				D3CE73152A1D733B004F91A8 /* OnboardingView.swift */,
 				D3D81DE82A1F844C0010A554 /* MainView.swift */,
 				D3D81DF12A1FA4EE0010A554 /* BoardView.swift */,
@@ -185,6 +188,7 @@
 				D3CE73162A1D733B004F91A8 /* OnboardingView.swift in Sources */,
 				D3D81DF02A1F964E0010A554 /* LembretesView.swift in Sources */,
 				D3D81DEC2A1F95DB0010A554 /* CalendarioView.swift in Sources */,
+				D36E1B622A23B89600923515 /* Moodly.xcdatamodeld in Sources */,
 				D33849502A22AA8D00072D18 /* LembretesPopUpView.swift in Sources */,
 				D3D81DF22A1FA4EE0010A554 /* BoardView.swift in Sources */,
 				D36004F22A02C2DB004E19CF /* Sopa_de_LetrinhasApp.swift in Sources */,
@@ -395,6 +399,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D36E1B602A23B89600923515 /* Moodly.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D36E1B612A23B89600923515 /* Moodly.xcdatamodel */,
+			);
+			currentVersion = D36E1B612A23B89600923515 /* Moodly.xcdatamodel */;
+			path = Moodly.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D36004E62A02C2DB004E19CF /* Project object */;
 }

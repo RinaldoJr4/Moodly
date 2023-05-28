@@ -10,11 +10,12 @@ import SwiftUI
 @main
 struct Sopa_de_LetrinhasApp: App {
     
-    @StateObject var vm = CoreDataViewModel()
+    @StateObject var dataController = CoreDataViewModel()
     
     var body: some Scene {
         WindowGroup {
             MainView()
+                .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
 }
@@ -24,7 +25,7 @@ class CoreDataViewModel: ObservableObject {
     let container: NSPersistentContainer
     
     init() {
-        container = NSPersistentContainer(name: "")
+        container = NSPersistentContainer(name: "Moodly")
         container.loadPersistentStores { (description, error) in
             if let error = error {
                 print("ERROR LOADING CORE DATA: \(error)")
