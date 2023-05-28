@@ -174,6 +174,7 @@ struct TaskViewCell : View {
         }.border(.black,width: 2)
             .onTapGesture {
                 task.isCompleted.toggle()
+                isCompletedsStored[task.index] = true
             }
     }
 }
