@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct Task: Identifiable, Equatable {
-    let id = UUID()
+struct Task: Identifiable, Equatable, Decodable, Encodable {
+    var id = UUID()
     let name: String
     var isCompleted = false
     var isDeleted = false
@@ -22,9 +22,15 @@ enum Sections: String, CaseIterable {
 
 struct TodoView: View {
     
-    //    @AppStorage("tasks") var tasksStored : [String] = [""]
+//    @AppStorage("tasks") var tasksStored =  [Task(name: "teste1",isCompleted: false)].rawValue
     @State var tasks: [Task] = [Task(name: "teste1",isCompleted: false)]
     @State var shouldShow = false
+//    @AppStorage("ids") var idsStored: [UUID] = [UUID()]
+    @AppStorage("names") var namessStored : [String] = ["Teste Persistencia"]
+    @AppStorage("isCompleteds") var isCompletedsStored : [Bool] = [false]
+    @AppStorage("isDeleteds") var isDeletedsStored : [Bool] = [false]
+    @AppStorage("creationDates") var creationDatesStored : [Date] = [Date()]
+
     
     var currentDate: Date
     
@@ -41,15 +47,23 @@ struct TodoView: View {
             if tasks.count != 0 {
                 List(Sections.allCases,id: \.self){ section in
                     ForEach(section == .pending ? pendingTask : completedTask){ $task in
-                        TaskViewCell(task: $task).onChange(of: tasks) { newValue in
-                            for task in tasks {
-                                if task.isDeleted {
-                                    let taskToDelete = task
-                                    tasks = tasks.filter { $0.id != taskToDelete.id }
-                                    print(tasks.count)
+                        TaskViewCell(task: $task)
+                            .onChange(of: tasks) { newValue in
+                                for task in tasks {
+                                    if task.isDeleted {
+                                        let taskToDelete = task
+                                        tasks = tasks.filter { $0.id != taskToDelete.id }
+                                    }
+                                }
+                                for i in 0...namessStored.count-1 {
+                                    if isDeletedsStored[i] {
+                                        namessStored.remove(at: i)
+                                        isDeletedsStored.remove(at: i)
+                                        isCompletedsStored.remove(at: i)
+                                        creationDatesStored.remove(at: i)
+                                    }
                                 }
                             }
-                        }
                     }
                 }.listStyle(.plain)
                     .frame(height: CGFloat(tasks.count) * 53)
@@ -85,6 +99,19 @@ struct TodoView: View {
                 Spacer()
             }.layoutPriority(2)
             Spacer().layoutPriority(2)
+                .onAppear {
+                    tasks.removeFirst()
+                    for i in 0...namessStored.count-1 {
+                        if isDeletedsStored[i] {
+                            namessStored.remove(at: i)
+                            isDeletedsStored.remove(at: i)
+                            isCompletedsStored.remove(at: i)
+                            creationDatesStored.remove(at: i)
+                        } else {
+                            tasks.append(Task(name: namessStored[i],isCompleted: isCompletedsStored[i],isDeleted: isDeletedsStored[i],creationDate: creationDatesStored[i]))
+                        }
+                    }
+                }
         }.sheet(isPresented: $shouldShow, content: {MakeTaskView(tasks: $tasks, currentDate: currentDate)})
     }
 }
@@ -93,6 +120,11 @@ struct TodoView: View {
 struct TaskViewCell : View {
     
     @Binding var task: Task
+    
+    @AppStorage("names") var namessStored : [String] = ["Teste Persistencia"]
+    @AppStorage("isCompleteds") var isCompletedsStored : [Bool] = [false]
+    @AppStorage("isDeleteds") var isDeletedsStored : [Bool] = [false]
+    @AppStorage("creationDates") var creationDatesStored : [Date] = [Date()]
     
     var body: some View {
         ZStack {
@@ -130,3 +162,22 @@ struct TaskViewCell : View {
     }
 }
 
+extension Array: RawRepresentable where Element: Codable {
+    public init?(rawValue: String) {
+        guard let data = rawValue.data(using: .utf8),
+              let result = try? JSONDecoder().decode([Element].self, from: data)
+        else {
+            return nil
+        }
+        self = result
+    }
+    
+    public var rawValue: String {
+        guard let data = try? JSONEncoder().encode(self),
+              let result = String(data: data, encoding: .utf8)
+        else {
+            return "[]"
+        }
+        return result
+    }
+}

@@ -15,6 +15,11 @@ struct MakeTaskView: View {
     @State var taskName = ""
     var currentDate: Date
     
+    @AppStorage("names") var namessStored : [String] = ["Teste Persistencia"]
+    @AppStorage("isCompleteds") var isCompletedsStored : [Bool] = [false]
+    @AppStorage("isDeleteds") var isDeletedsStored : [Bool] = [false]
+    @AppStorage("creationDates") var creationDatesStored : [Date] = [Date()]
+    
     var body: some View {
         ZStack {
             
@@ -53,6 +58,10 @@ struct MakeTaskView: View {
                     if taskName != "" {
                         presentation.callAsFunction()
                         tasks.append(Task(name: taskName,creationDate: currentDate))
+                        namessStored.append(taskName)
+                        isDeletedsStored.append(false)
+                        isCompletedsStored.append(false)
+                        creationDatesStored.append(currentDate)
                     }
                 }, label: {
                     ZStack {
