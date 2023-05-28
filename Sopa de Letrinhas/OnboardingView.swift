@@ -23,7 +23,7 @@ struct OnboardingView: View {
                     
                     Button("Sair", action: {
                         presentation.wrappedValue.dismiss()
-                        didOnboardingHappend.toggle()
+                        didOnboardingHappend = true
                     })
                     
                 }
