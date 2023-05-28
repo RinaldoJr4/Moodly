@@ -56,7 +56,17 @@ struct TodoView: View {
                                     }
                                 }
                                 for i in 0...namessStored.count-1 {
-                                    if isDeletedsStored[i] {
+                                    if isDeletedsStored[i] && isDeletedsStored.count != 1 {
+                                        namessStored.remove(at: i)
+                                        isDeletedsStored.remove(at: i)
+                                        isCompletedsStored.remove(at: i)
+                                        creationDatesStored.remove(at: i)
+                                    }
+                                    else if isDeletedsStored[i] && isDeletedsStored.count == 1 {
+                                        namessStored = ["savestore"]
+                                        isDeletedsStored = [false]
+                                        isCompletedsStored = [false]
+                                        creationDatesStored = [Date()]
                                         namessStored.remove(at: i)
                                         isDeletedsStored.remove(at: i)
                                         isCompletedsStored.remove(at: i)
@@ -102,14 +112,14 @@ struct TodoView: View {
                 .onAppear {
                     tasks.removeFirst()
                     for i in 0...namessStored.count-1 {
-//                        if isDeletedsStored[i] {
-//                            namessStored.remove(at: i)
-//                            isDeletedsStored.remove(at: i)
-//                            isCompletedsStored.remove(at: i)
-//                            creationDatesStored.remove(at: i)
-//                        } else {
-//                            tasks.append(Task(name: namessStored[i],isCompleted: isCompletedsStored[i],isDeleted: isDeletedsStored[i],creationDate: creationDatesStored[i]))
-//                        }
+                        if isDeletedsStored[i] {
+                            namessStored.remove(at: i)
+                            isDeletedsStored.remove(at: i)
+                            isCompletedsStored.remove(at: i)
+                            creationDatesStored.remove(at: i)
+                        } else {
+                            tasks.append(Task(name: namessStored[i],isCompleted: isCompletedsStored[i],isDeleted: isDeletedsStored[i],creationDate: creationDatesStored[i]))
+                        }
                     }
                 }
         }.sheet(isPresented: $shouldShow, content: {MakeTaskView(tasks: $tasks, currentDate: currentDate)})
