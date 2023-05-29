@@ -20,13 +20,19 @@ struct  LembretesView: View {
                         .bold()
                         .foregroundColor(.black)
                         .minimumScaleFactor(0.7)
-                        .padding(.leading,geo.size.width/32)
+                        .padding(.leading,geo.size.width/15)
+                        .padding(.top,geo.size.height/8)
                     Spacer()
                 }
                 .padding(.top,geo.size.height/30)
                 
-                Rectangle().foregroundColor(.gray)
-                    .padding(.top,-10)
+                Image("Clock")
+                    .resizable()
+                    .frame(maxWidth: 70,maxHeight: 70)
+                    .frame(minWidth: 30,minHeight: 30)
+                    .scaledToFit()
+                    .padding(.top,geo.size.height/45)
+                    .padding(.bottom,geo.size.height/4)
             }.onTapGesture {
                 shouldShow.toggle()
             }.sheet(isPresented: $shouldShow, content: {LembretePopUpView()})

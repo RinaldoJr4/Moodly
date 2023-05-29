@@ -29,7 +29,7 @@ struct  CalendarioView: View {
                         .bold()
                         .foregroundColor(.black)
                         .minimumScaleFactor(0.7)
-                        .padding(.leading,geo.size.width/32)
+                        .padding(.leading,geo.size.width/15)
                     Spacer()
                 }
                 .padding(.top,geo.size.height/30)

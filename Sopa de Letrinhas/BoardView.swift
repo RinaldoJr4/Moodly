@@ -28,15 +28,15 @@ struct BoardView: View {
                                 .font(.largeTitle)
                                 .bold()
                                 .foregroundColor(.black)
-                                .minimumScaleFactor(0.8)                            .padding(.vertical,geo.size.height/25)
+                                .minimumScaleFactor(0.8)                      .padding(.vertical,geo.size.height/25)
                             Spacer()
-                        }
+                        }.padding(geo.size.width/80)
                         
                         TodoView(currentDate: currentDate)
                         
                         
-                    }.padding()
-                        .frame(width: geo.size.width/1.6)
+                    }.padding(geo.size.width/60)
+                        .frame(width: geo.size.width/1.4)
                     
                     VStack {
                         HStack{
@@ -67,7 +67,7 @@ struct BoardView: View {
                                         .frame(width: geo.size.width/5, height: geo.size.width/5)
                                     Spacer()
                                 }.padding(.top,geo.size.width/23)
-                                    .padding(.leading,geo.size.width/38)
+                                    .padding(.leading,geo.size.width/400)
                                 HStack{
                                     Spacer()
                                     Rectangle().foregroundColor(.clear)
@@ -84,7 +84,6 @@ struct BoardView: View {
                                     }
                                     Spacer()
                                 }.padding(.top,geo.size.width/25)
-                                    .padding(.leading,geo.size.width/40)
                                 HStack{
                                     Spacer()
                                     Rectangle().foregroundColor(.clear)
@@ -120,7 +119,8 @@ struct BoardView: View {
                                     .padding(.trailing,geo.size.width/300)
                             }
                         }.layoutPriority(90)
-                    }.padding()
+                    }.padding(.vertical)
+                        .padding(.trailing)
                 }.clipped()
             }.scrollIndicators(.hidden)
         }

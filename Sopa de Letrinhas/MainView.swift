@@ -17,58 +17,45 @@ struct MainView: View {
         GeometryReader{ geo in
             ZStack {
                 
-                Rectangle().foregroundColor(Color(white: 0.4))
-                
-                HStack{
-                    ZStack{
-                        Rectangle().foregroundColor(.clear)
-                    }
-                    .frame(width: geo.size.width/1.3)
-                    VStack{
-                        ZStack{
-                            Rectangle().foregroundColor(Color(white: 0.3))
-                        }.padding(.horizontal,10)
-                            .frame(height: geo.size.height/4.15)
-                            .padding(.bottom,10)
-                        ZStack{
-                            Rectangle().foregroundColor(Color(white: 0.3))
-                        }.padding(10)
-                        ZStack{
-                            Rectangle().foregroundColor(Color(white: 0.3))
-                        }.padding(.horizontal,10)
-                            .padding(.top,10)
-                            .padding(.bottom,-2)
-                    }
-                }.padding(.top,12)
-                    .padding(.leading, 12)
-                    .padding(.trailing, 5)
-                    .padding(.bottom,18)
+                ZStack {
+                    Rectangle().foregroundColor(Color("Cortica100"))
+                    
+                    Image("CorticaBackground")
+                        .resizable()
+                        .scaledToFill()
+                }
+                .frame(width: geo.size.width,height: geo.size.height)
                 
                 HStack{
                     ZStack{
                         Rectangle().foregroundColor(.white)
+                            .cornerRadius(16)
+                        Rectangle().foregroundColor(Color("Papel80"))
+                            .cornerRadius(16)
                         BoardView()
                     }
-                    .frame(width: geo.size.width/1.3)
+                    .frame(width: geo.size.width/1.38)
                     VStack{
                         ZStack{
-                            Rectangle().foregroundColor(.white)
-                            StatusView(status: "tô triste")
-                        }.padding(.horizontal,10)
-                            .padding(.bottom,10)
-                            .frame(height: geo.size.height/4)
-                        ZStack{
-                            Rectangle().foregroundColor(.white)
+                            Image("postitRasgado")
+                                .resizable()
                             CalendarioView()
-                        }.padding(10)
+                                .padding(.bottom, 15)
+                        }.frame(height: geo.size.height/5)
+                            .padding(.bottom,geo.size.height/30)
                         ZStack{
-                            Rectangle().foregroundColor(.white)
+                            Image("postitInteiro")
+                                .resizable()
+                            StatusView(status: "tô triste")
+                        }.padding(.vertical,geo.size.height/30)
+                        ZStack{
+                            Image("postitDobrado")
+                                .resizable()
                             LembretesView()
-                        }.padding(.horizontal,10)
-                            .padding(.top,10)
-                    }
-                }.padding(10)
-                    .padding(.bottom,10)
+                        }
+                        .padding(.top,geo.size.height/30)
+                    }.padding(.leading,geo.size.width/30)
+                }.padding(geo.size.height/22.5)
                     .sheet(isPresented: $shouldShow, content: {OnboardingView()})
                 
             }.onAppear(){
@@ -76,6 +63,36 @@ struct MainView: View {
                     shouldShow.toggle()
                 }
             }
-        }.frame(minWidth: 900,minHeight: 500)
+        }.frame(minWidth: 900,minHeight: 562.5)
+            .overlay {
+                overlayView()
+            }
     }
 }
+
+struct overlayView: View {
+    
+    var body: some View {
+        GeometryReader{ geo in
+            ZStack {
+                
+                Spacer()
+                .frame(width: geo.size.width,height: geo.size.height)
+                
+                HStack{
+                    Spacer()
+                    .frame(width: geo.size.width/1.38)
+                    VStack{
+                        Spacer()
+                            .frame(height: geo.size.height/5)
+                            .padding(.bottom,geo.size.height/30)
+                        Spacer().padding(.vertical,geo.size.height/30)
+                        Spacer()
+                        .padding(.top,geo.size.height/30)
+                    }.padding(.leading,geo.size.width/30)
+                }.padding(geo.size.height/22.5)
+            }
+        }
+    }
+}
+
