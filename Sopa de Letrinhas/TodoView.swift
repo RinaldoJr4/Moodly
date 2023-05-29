@@ -23,16 +23,16 @@ enum Sections: String, CaseIterable {
 
 struct TodoView: View {
     
-//    @AppStorage("tasks") var tasksStored =  [Task(name: "teste1",isCompleted: false)].rawValue
+    //    @AppStorage("tasks") var tasksStored =  [Task(name: "teste1",isCompleted: false)].rawValue
     @State var tasks: [Task] = [Task(name: "teste1",isCompleted: false, index: 0)]
     @State var shouldShow = false
-//    @AppStorage("ids") var idsStored: [UUID] = [UUID()]
+    //    @AppStorage("ids") var idsStored: [UUID] = [UUID()]
     @AppStorage("names") var namessStored : [String] = ["Teste Persistencia"]
     @AppStorage("isCompleteds") var isCompletedsStored : [Bool] = [false]
     @AppStorage("isDeleteds") var isDeletedsStored : [Bool] = [false]
     @AppStorage("creationDates") var creationDatesStored : [Date] = [Date()]
     @State var count = 0
-
+    
     
     var currentDate: Date
     
@@ -66,7 +66,7 @@ struct TodoView: View {
                                         creationDatesStored.remove(at: i)
                                         break
                                     }
-                                    else if isDeletedsStored[i] && isDeletedsStored.count == 1 {
+                                    else if isDeletedsStored[i] && isDeletedsStored.count == 0 {
                                         namessStored = ["savestore"]
                                         isDeletedsStored = [false]
                                         isCompletedsStored = [false]
@@ -115,15 +115,28 @@ struct TodoView: View {
             Spacer().layoutPriority(2)
                 .onAppear {
                     tasks.removeFirst()
-                    
-                    for i in 0...namessStored.count-1 {
-                        if isDeletedsStored[i] {
-                            namessStored.remove(at: i)
-                            isDeletedsStored.remove(at: i)
-                            isCompletedsStored.remove(at: i)
-                            creationDatesStored.remove(at: i)
-                        } else {
-                            tasks.append(Task(name: namessStored[i],isCompleted: isCompletedsStored[i],isDeleted: isDeletedsStored[i],creationDate: creationDatesStored[i], index: tasks.count))
+                    if namessStored == [] || isDeletedsStored == [] || isCompletedsStored == [] || creationDatesStored == [] {
+                        namessStored = [""]
+                        isDeletedsStored = [false]
+                        isCompletedsStored = [false]
+                        creationDatesStored = [Date()]
+                    }
+                    else if namessStored == [""] {
+                        namessStored.removeFirst()
+                        isDeletedsStored.removeFirst()
+                        isCompletedsStored.removeFirst()
+                        creationDatesStored.removeFirst()
+                    }
+                    else {
+                        for i in 0...namessStored.count-1 {
+                            if isDeletedsStored[i] {
+                                namessStored.remove(at: i)
+                                isDeletedsStored.remove(at: i)
+                                isCompletedsStored.remove(at: i)
+                                creationDatesStored.remove(at: i)
+                            } else {
+                                tasks.append(Task(name: namessStored[i],isCompleted: isCompletedsStored[i],isDeleted: isDeletedsStored[i],creationDate: creationDatesStored[i], index: tasks.count))
+                            }
                         }
                     }
                 }

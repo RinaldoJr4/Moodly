@@ -12,10 +12,22 @@ struct Sopa_de_LetrinhasApp: App {
     
     @StateObject var dataController = CoreDataViewModel()
     
+    @AppStorage("names") var namessStored : [String] = ["Teste Persistencia"]
+    @AppStorage("isCompleteds") var isCompletedsStored : [Bool] = [false]
+    @AppStorage("isDeleteds") var isDeletedsStored : [Bool] = [false]
+    @AppStorage("creationDates") var creationDatesStored : [Date] = [Date()]
+
+    
     var body: some Scene {
         WindowGroup {
             MainView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
+                .onAppear(){
+//                    namessStored = [""]
+//                    isDeletedsStored = [false]
+//                    isCompletedsStored = [false]
+//                    creationDatesStored = [Date()]
+                }
         }
     }
 }
