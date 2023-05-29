@@ -76,19 +76,49 @@ struct overlayView: View {
         GeometryReader{ geo in
             ZStack {
                 
-                Spacer()
-                .frame(width: geo.size.width,height: geo.size.height)
+                    Spacer()
+                        .frame(width: geo.size.width,height: geo.size.height)
                 
                 HStack{
                     Spacer()
                     .frame(width: geo.size.width/1.38)
                     VStack{
-                        Spacer()
-                            .frame(height: geo.size.height/5)
-                            .padding(.bottom,geo.size.height/30)
-                        Spacer().padding(.vertical,geo.size.height/30)
-                        Spacer()
-                        .padding(.top,geo.size.height/30)
+                        ZStack {
+                            VStack {
+                                Image("Clip")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: geo.size.height/13, height: geo.size.height/13)
+                                    .padding(.top, -geo.size.height/19)
+                                Spacer()
+                            }
+                            Spacer()
+                                .frame(height: geo.size.height/5)
+                                .padding(.bottom,geo.size.height/30)
+                        }
+                        ZStack{
+                            VStack{
+                                Image("Clip")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: geo.size.height/13, height: geo.size.height/13)
+                                    .padding(.top, -geo.size.height/13)
+                                Spacer()
+                            }
+                            Spacer().padding(.vertical,geo.size.height/30)
+                        }
+                        ZStack{
+                            VStack{
+                                Image("Clip")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: geo.size.height/13, height: geo.size.height/13)
+                                    .padding(.top, -geo.size.height/24)
+                                Spacer()
+                            }
+                            Spacer()
+                                .padding(.top,geo.size.height/30)
+                        }
                     }.padding(.leading,geo.size.width/30)
                 }.padding(geo.size.height/22.5)
             }

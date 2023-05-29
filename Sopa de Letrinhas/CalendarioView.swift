@@ -32,7 +32,7 @@ struct  CalendarioView: View {
                         .padding(.leading,geo.size.width/15)
                     Spacer()
                 }
-                .padding(.top,geo.size.height/30)
+                .padding(.top,geo.size.height/8)
                 
                 if ((Int(formatter.string(from: today)) ?? 0) <= 11) {
                     // Madrugada

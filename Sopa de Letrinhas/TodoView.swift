@@ -183,7 +183,7 @@ struct TaskViewCell : View {
                 Text("X")
                     .foregroundColor(.gray)
                     .font(.title)
-                    .padding(.trailing, 15)
+                    .padding(.trailing, 24)
                     .onTapGesture {
                         task.isDeleted.toggle()
                         isDeletedsStored[task.index] = true
