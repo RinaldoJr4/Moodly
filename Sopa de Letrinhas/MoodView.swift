@@ -48,6 +48,7 @@ struct MoodView: View {
 //                            .frame(width: 75)
 //                        
                         Button ("😄", action: {
+                            Image("happy")
                             print ("Feliz")
                         })
                         .buttonStyle(.borderless)
