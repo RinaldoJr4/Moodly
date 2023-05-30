@@ -12,6 +12,7 @@ struct MainView: View {
     @AppStorage("onboarding") var didOnboardingHappend = false
     @State var shouldShow = false
     @State var birthDate = Date.now
+    let un = UNUserNotificationCenter.current()
     
     var body: some View {
         GeometryReader{ geo in
@@ -72,16 +73,18 @@ struct MainView: View {
 
 struct overlayView: View {
     
+    let un = UNUserNotificationCenter.current()
+    
     var body: some View {
         GeometryReader{ geo in
             ZStack {
                 
-                    Spacer()
-                        .frame(width: geo.size.width,height: geo.size.height)
+                Spacer()
+                    .frame(width: geo.size.width,height: geo.size.height)
                 
                 HStack{
                     Spacer()
-                    .frame(width: geo.size.width/1.38)
+                        .frame(width: geo.size.width/1.38)
                     VStack{
                         ZStack {
                             VStack {
@@ -122,7 +125,132 @@ struct overlayView: View {
                     }.padding(.leading,geo.size.width/30)
                 }.padding(geo.size.height/22.5)
             }
+        }.onAppear() {
+            
+            var dateComponents = DateComponents()
+                dateComponents.hour = 15
+//                dateComponents.minute = 58
+            
+            // Request authorization
+            un.requestAuthorization(options: [.alert, .sound]) { authorized, error in
+                if authorized {
+                    print("Authorized")
+                } else if !authorized {
+                    print("Not authorized")
+                } else {
+                    print(error?.localizedDescription as Any)
+                }
+            }
+            
+            un.getNotificationSettings { (settings) in
+                if settings.authorizationStatus == .authorized {
+                    let content = UNMutableNotificationContent()
+                    
+                    content.title = "Barbie World"
+                    content.subtitle = "This is a subtitle"
+                    content.body = "This is the body text"
+                    content.sound = UNNotificationSound.default
+                    content.categoryIdentifier = "barbieCoins"
+                    
+                    let id = "Test"
+//                    let filePath = Bundle.main.path(forResource: "barbie", ofType: ".png")
+//                    let fileURL = URL(fileURLWithPath: filePath!)
+                    
+//                    do {
+//                        let attachment = try UNNotificationAttachment.init(identifier: "Another test", url: fileURL, options: .none)
+//
+//                        content.attachments = [attachment]
+//                    } catch let error {
+//                        print(error.localizedDescription)
+//                    }
+                    
+                    let buy = UNNotificationAction(identifier: "buy", title: "Buy", options: [.foreground])
+                    let sell = UNNotificationAction(identifier: "sell", title: "Sell", options: [.foreground])
+                    let hodl = UNNotificationAction(identifier: "hodl", title: "Hodl", options: [.foreground])
+                    
+                    
+                    let category = UNNotificationCategory(identifier: "barbieCoins", actions: [buy, sell, hodl], intentIdentifiers: [], options: [])
+                    
+                    let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+                    
+                    let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+                    
+                    self.un.setNotificationCategories([category])
+                    
+                    self.un.add(request) { (error) in
+                        if error != nil { print(error?.localizedDescription as Any)}
+                    }
+                }
+            }
         }
     }
 }
 
+import UserNotifications
+
+struct NotificationView: View {
+    
+    let un = UNUserNotificationCenter.current()
+    
+    var body: some View {
+        
+        Button("Notify", action: {
+            
+            var dateComponents = DateComponents()
+                dateComponents.hour = 14
+                dateComponents.minute = 55
+            
+            // Request authorization
+            un.requestAuthorization(options: [.alert, .sound]) { authorized, error in
+                if authorized {
+                    print("Authorized")
+                } else if !authorized {
+                    print("Not authorized")
+                } else {
+                    print(error?.localizedDescription as Any)
+                }
+            }
+            
+            un.getNotificationSettings { (settings) in
+                if settings.authorizationStatus == .authorized {
+                    let content = UNMutableNotificationContent()
+                    
+                    content.title = "Barbie World"
+                    content.subtitle = "This is a subtitle"
+                    content.body = "This is the body text"
+                    content.sound = UNNotificationSound.default
+                    content.categoryIdentifier = "barbieCoins"
+                    
+                    let id = "Test"
+                    let filePath = Bundle.main.path(forResource: "barbie", ofType: ".png")
+                    let fileURL = URL(fileURLWithPath: filePath!)
+                    
+                    do {
+                        let attachment = try UNNotificationAttachment.init(identifier: "Another test", url: fileURL, options: .none)
+                        
+                        content.attachments = [attachment]
+                    } catch let error {
+                        print(error.localizedDescription)
+                    }
+                    
+                    let buy = UNNotificationAction(identifier: "buy", title: "Buy", options: [.foreground])
+                    let sell = UNNotificationAction(identifier: "sell", title: "Sell", options: [.foreground])
+                    let hodl = UNNotificationAction(identifier: "hodl", title: "Hodl", options: [.foreground])
+                    
+                    
+                    let category = UNNotificationCategory(identifier: "barbieCoins", actions: [buy, sell, hodl], intentIdentifiers: [], options: [])
+                    
+                    let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+                    
+                    let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+                    
+                    self.un.setNotificationCategories([category])
+                    
+                    self.un.add(request) { (error) in
+                        if error != nil { print(error?.localizedDescription as Any)}
+                    }
+                }
+            }
+        })
+    }
+}

@@ -53,6 +53,17 @@ struct MakeTaskView: View {
                     .frame(width: 300,height: 50)
                     .textFieldStyle(.plain)
                     .preferredColorScheme(.light)
+                    .onSubmit {
+                        // Pra quando a pessoa apertar enter
+                        if taskName != "" {
+                            presentation.callAsFunction()
+                            tasks.append(Task(name: taskName,creationDate: currentDate, index: tasks.count))
+                            namessStored.append(taskName)
+                            isDeletedsStored.append(false)
+                            isCompletedsStored.append(false)
+                            creationDatesStored.append(currentDate)
+                        }
+                    }
                 Spacer()
                 Button(action: {
                     if taskName != "" {

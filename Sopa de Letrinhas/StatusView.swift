@@ -10,7 +10,9 @@ import SwiftUI
 struct StatusView: View {
     
     @State var shouldShow = false
+    
     @AppStorage("status") var currentStatus = "Triste"
+    
     var dictionaryStatus = ["Triste":"😭", "Feliz":"🤩"]
     var status : String
     var body: some View {
