@@ -9,9 +9,12 @@ import SwiftUI
 
 struct MainView: View {
     
-    @AppStorage("onboarding") var didOnboardingHappend = false
+    @AppStorage("onboarding") var didOnboardingHappened = false
     @State var shouldShow = false
     @State var birthDate = Date.now
+    
+    @EnvironmentObject var currentStatus2: MoodMangr
+
     
     var body: some View {
         GeometryReader{ geo in
@@ -47,6 +50,7 @@ struct MainView: View {
                             Image("postitInteiro")
                                 .resizable()
                             StatusView(status: "tô triste")
+                                .environmentObject(currentStatus2)
                         }.padding(.vertical,geo.size.height/30)
                         ZStack{
                             Image("postitDobrado")
@@ -59,7 +63,7 @@ struct MainView: View {
                     .sheet(isPresented: $shouldShow, content: {OnboardingView()})
                 
             }.onAppear(){
-                if !didOnboardingHappend {
+                if !didOnboardingHappened {
                     shouldShow.toggle()
                 }
             }
