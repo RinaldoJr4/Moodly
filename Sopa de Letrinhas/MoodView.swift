@@ -10,7 +10,7 @@ struct MoodView: View {
     @State private var selectedButton: String?
     @State private var selectedButton2: String?
     
-    @EnvironmentObject var currentStatus: MoodMangr
+    @EnvironmentObject var currentStatus: MoodManager
     
     @Environment(\.dismiss) var presentation
     
@@ -73,15 +73,46 @@ struct MoodView: View {
                     .padding(.horizontal, 12)
                 }
 
-                if selectedButton2 == ("angry") {
-                    Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+                if selectedButton2 == ("happy") {
+                    Text("Que massa! Que tal tentar realizar atividades que você está querendo muito concluir? Lembre de ter cuidado para não se sobrecarregar. Bora simbora!")
                         .padding(.bottom, 78)
                         .padding(.top, 64)
                         .padding(.leading, 110)
                         .padding(.trailing, 95)
                         .foregroundColor(Color("quasepreto100"))
                 }
-                else
+                else if selectedButton2 == ("sad") {
+                    Text("Tá tudo certo, nem sempre estaremos bem! Talvez você não seja tão produtivo hoje, mantenha isso em mente e busque não se cobrar tanto. Vai dar bom!")
+                        .padding(.bottom, 78)
+                        .padding(.top, 64)
+                        .padding(.leading, 110)
+                        .padding(.trailing, 95)
+                        .foregroundColor(Color("quasepreto100"))
+                }
+                else if selectedButton2 == ("angry") {
+                    Text("Sei que não é o melhor momento. Se tiver que fazer algo, que tal priorizar apenas o que é necessário e, se surgir a oportunidade, tirar um tempo para conversar com alguém.")
+                        .padding(.bottom, 78)
+                        .padding(.top, 64)
+                        .padding(.leading, 110)
+                        .padding(.trailing, 95)
+                        .foregroundColor(Color("quasepreto100"))
+                }
+                else if selectedButton2 == ("anxious") {
+                    Text("Tá tudo certo, nem sempre estaremos bem! Talvez você não seja tão produtivo hoje, mantenha isso em mente e busque não se cobrar tanto. Vai dar bom!")
+                        .padding(.bottom, 78)
+                        .padding(.top, 64)
+                        .padding(.leading, 110)
+                        .padding(.trailing, 95)
+                        .foregroundColor(Color("quasepreto100"))
+                }
+                else if selectedButton2 == ("neutral") {
+                    Text("Massa! Bora começar o dia com o pé direito organizando as tarefas.")
+                        .padding(.bottom, 78)
+                        .padding(.top, 64)
+                        .padding(.leading, 110)
+                        .padding(.trailing, 95)
+                        .foregroundColor(Color("quasepreto100"))
+                }
                 
                 Button(action: {
                     if selectedButton2 != nil {

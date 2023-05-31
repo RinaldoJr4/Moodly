@@ -5,11 +5,12 @@
 //  Created by rsbj on 25/05/23.
 //
 
+import SwiftUI
+
+
 class MoodMangr: ObservableObject {
     @Published var currentStatus = "sad"
 }
-
-import SwiftUI
 
 struct StatusView: View {
     
