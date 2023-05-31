@@ -20,7 +20,7 @@ struct Sopa_de_LetrinhasApp: App {
     
     var body: some Scene {
         WindowGroup {
-            OnboardingView()
+            MainView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
                 .onAppear(){
 //                    namessStored = [""]

@@ -13,6 +13,7 @@ struct  CalendarioView: View {
     @AppStorage("corCalendario") var corCalendario = "postitRasgadoAmarelo"
     
     let daysOfTheWeek = ["","Domingo","Segunda-feira","Terça-feira","Quarta-feira","Quinta-feira","Sexta-feira","Sábado"]
+    
     let today  = Date.now
     var todayCalendar = Calendar.current
     var formatter: DateFormatter {
