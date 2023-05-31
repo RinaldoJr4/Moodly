@@ -11,6 +11,8 @@ struct LembretePopUpView: View {
     
     @Environment(\.dismiss) var presentation
     
+    var notify = NotificationManager()
+    
     @AppStorage("reflex") var isReflexaoOn = true
     @AppStorage("descanso") var isDescansoOn = false
     @AppStorage("dormir") var isDormirOn = false
@@ -25,6 +27,26 @@ struct LembretePopUpView: View {
                     Spacer()
                     Button {
                         presentation.callAsFunction()
+                        if isReflexaoOn {
+                            notify.reflexNotificationOn()
+                        }
+                        else {
+                            notify.reflexNotificationOff()
+                        }
+                        
+                        if isDormirOn {
+                            notify.dormirNotificationOn()
+                        }
+                        else {
+                            notify.dormirNotificationOff()
+                        }
+                        
+                        if isDescansoOn {
+                            notify.descansoNotificationOn()
+                        }
+                        else {
+                            notify.descansoNotificationOff()
+                        }
                     } label: {
                         Text("X")
                             .font(.title)
@@ -45,6 +67,9 @@ struct LembretePopUpView: View {
                     Text("Reflexão")
                         .font(.title)
                     Spacer()
+                    Text("(18:00)")
+                        .font(.title)
+                        .foregroundColor(.gray)
                     Toggle(isOn: $isReflexaoOn, label: {})
                         .toggleStyle(.switch)
                         .preferredColorScheme(.light)
@@ -54,6 +79,9 @@ struct LembretePopUpView: View {
                     Text("Descanso")
                         .font(.title)
                     Spacer()
+                    Text("(12:30)")
+                        .font(.title)
+                        .foregroundColor(.gray)
                     Toggle(isOn: $isDescansoOn, label: {})
                         .toggleStyle(.switch)
                         .preferredColorScheme(.light)
@@ -63,6 +91,9 @@ struct LembretePopUpView: View {
                     Text("Dormir")
                         .font(.title)
                     Spacer()
+                    Text("(21:30)")
+                        .font(.title)
+                        .foregroundColor(.gray)
                     Toggle(isOn: $isDormirOn, label: {})
                         .toggleStyle(.switch)
                         .preferredColorScheme(.light)
