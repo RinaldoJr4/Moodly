@@ -10,6 +10,7 @@ import SwiftUI
 struct  CalendarioView: View {
     
     @State var size = CGSize()
+    @AppStorage("corCalendario") var corCalendario = "postitRasgadoAmarelo"
     
     let daysOfTheWeek = ["","Domingo","Segunda-feira","Terça-feira","Quarta-feira","Quinta-feira","Sexta-feira","Sábado"]
     let today  = Date.now
@@ -28,25 +29,51 @@ struct  CalendarioView: View {
                         .font(.largeTitle)
                         .bold()
                         .foregroundColor(.black)
-                        .minimumScaleFactor(0.7)
+                        .minimumScaleFactor(0.8)
                         .padding(.leading,geo.size.width/15)
+                        .padding(.top,geo.size.height/10)
                     Spacer()
                 }
                 .padding(.top,geo.size.height/8)
                 
-                if ((Int(formatter.string(from: today)) ?? 0) <= 11) {
-                    // Madrugada
-                    Rectangle().foregroundColor(.orange)
-                        .padding(.top,-10)
-                } else if ((Int(formatter.string(from: today)) ?? 0) >= 18){
-                    // Noite
-                    Rectangle().foregroundColor(.blue)
-                        .padding(.top,-10)
-                } else {
-                    // Dia
-                    Rectangle().foregroundColor(.yellow)
-                        .padding(.top,-10)
-                }
+                HStack {
+                    Spacer()
+                    
+                    if ((Int(formatter.string(from: today)) ?? 0) <= 11) {
+                        // Madrugada
+                        Image("Day")
+                            .resizable()
+                            .frame(maxWidth: 70,maxHeight: 70)
+                            .frame(minWidth: 30,minHeight: 30)
+                            .scaledToFit()
+                            .padding(.top,-geo.size.height/35)
+                            .onAppear {
+                                corCalendario = "postitRasgadoAmarelo"
+                            }
+                    } else if ((Int(formatter.string(from: today)) ?? 0) >= 18){
+                        // Noite
+                        Image("Night")
+                            .resizable()
+                            .frame(maxWidth: 70,maxHeight: 70)
+                            .frame(minWidth: 30,minHeight: 30)
+                            .scaledToFit()
+                            .padding(.top,-geo.size.height/45)
+                            .onAppear {
+                                corCalendario = "postitRasgadoAzul"
+                            }
+                    } else {
+                        // Dia
+                        Image("Afternoon")
+                            .resizable()
+                            .frame(maxWidth: 70,maxHeight: 70)
+                            .frame(minWidth: 30,minHeight: 30)
+                            .scaledToFit()
+                            .padding(.top,-geo.size.height/45)
+                            .onAppear {
+                                corCalendario = "postitRasgadoVermelho"
+                            }
+                    }
+                }.padding(.trailing, geo.size.width/10)
             }
         }
     }
