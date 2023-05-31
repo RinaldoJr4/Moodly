@@ -23,7 +23,7 @@ struct MakeTaskView: View {
     var body: some View {
         ZStack {
             
-            Rectangle().foregroundColor(.white)
+            Rectangle().foregroundColor(Color("papel20"))
             
             VStack {
                 HStack {

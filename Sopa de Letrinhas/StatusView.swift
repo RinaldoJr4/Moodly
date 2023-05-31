@@ -45,6 +45,6 @@ struct StatusView: View {
             }
         }.onTapGesture {
             shouldShow.toggle()
-        }.sheet(isPresented: $shouldShow, content: {OnboardingView()})
+        }.sheet(isPresented: $shouldShow, content: {MoodView()})
     }
 }
