@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5A3B13A42A26256F00DB2DBE /* MoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3B13A32A26256F00DB2DBE /* MoodView.swift */; };
 		D33849502A22AA8D00072D18 /* LembretesPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D338494F2A22AA8D00072D18 /* LembretesPopUpView.swift */; };
+		D351D4622A27D1E700C6F311 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351D4612A27D1E700C6F311 /* NotificationManager.swift */; };
 		D35A6E232A226BB400513FFF /* MakeTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35A6E222A226BB400513FFF /* MakeTaskView.swift */; };
 		D36004F22A02C2DB004E19CF /* Sopa_de_LetrinhasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36004F12A02C2DB004E19CF /* Sopa_de_LetrinhasApp.swift */; };
 		D36004F42A02C2DB004E19CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36004F32A02C2DB004E19CF /* ContentView.swift */; };
@@ -24,11 +25,14 @@
 		D3D81DEE2A1F961E0010A554 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D81DED2A1F961E0010A554 /* StatusView.swift */; };
 		D3D81DF02A1F964E0010A554 /* LembretesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D81DEF2A1F964E0010A554 /* LembretesView.swift */; };
 		D3D81DF22A1FA4EE0010A554 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D81DF12A1FA4EE0010A554 /* BoardView.swift */; };
+		D3DE26C62A28C1F1006BCFC6 /* PumpkinCheesecake.otf in Resources */ = {isa = PBXBuildFile; fileRef = D3DE26C52A28C1F1006BCFC6 /* PumpkinCheesecake.otf */; };
+		D3DE26E62A28CCBE006BCFC6 /* SejaPremium.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DE26E52A28CCBE006BCFC6 /* SejaPremium.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5A3B13A32A26256F00DB2DBE /* MoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodView.swift; sourceTree = "<group>"; };
 		D338494F2A22AA8D00072D18 /* LembretesPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LembretesPopUpView.swift; sourceTree = "<group>"; };
+		D351D4612A27D1E700C6F311 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		D35A6E222A226BB400513FFF /* MakeTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeTaskView.swift; sourceTree = "<group>"; };
 		D36004EE2A02C2DB004E19CF /* Sopa de Letrinhas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sopa de Letrinhas.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D36004F12A02C2DB004E19CF /* Sopa_de_LetrinhasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sopa_de_LetrinhasApp.swift; sourceTree = "<group>"; };
@@ -45,6 +49,9 @@
 		D3D81DED2A1F961E0010A554 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		D3D81DEF2A1F964E0010A554 /* LembretesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LembretesView.swift; sourceTree = "<group>"; };
 		D3D81DF12A1FA4EE0010A554 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		D3DE26C52A28C1F1006BCFC6 /* PumpkinCheesecake.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PumpkinCheesecake.otf; sourceTree = "<group>"; };
+		D3DE26C72A28C20D006BCFC6 /* Sopa-de-Letrinhas-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Sopa-de-Letrinhas-Info.plist"; sourceTree = SOURCE_ROOT; };
+		D3DE26E52A28CCBE006BCFC6 /* SejaPremium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SejaPremium.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,10 +84,12 @@
 		D36004F02A02C2DB004E19CF /* Sopa de Letrinhas */ = {
 			isa = PBXGroup;
 			children = (
+				D3DE26C72A28C20D006BCFC6 /* Sopa-de-Letrinhas-Info.plist */,
 				D36004F12A02C2DB004E19CF /* Sopa_de_LetrinhasApp.swift */,
 				D36E1B602A23B89600923515 /* Moodly.xcdatamodeld */,
 				D3CE73152A1D733B004F91A8 /* OnboardingView.swift */,
 				D3D81DE82A1F844C0010A554 /* MainView.swift */,
+				D351D4612A27D1E700C6F311 /* NotificationManager.swift */,
 				D3D81DF12A1FA4EE0010A554 /* BoardView.swift */,
 				D3BC2AD42A21425D00BA6B2D /* TodoView.swift */,
 				D35A6E222A226BB400513FFF /* MakeTaskView.swift */,
@@ -89,6 +98,8 @@
 				D3D81DED2A1F961E0010A554 /* StatusView.swift */,
 				D3D81DEF2A1F964E0010A554 /* LembretesView.swift */,
 				D338494F2A22AA8D00072D18 /* LembretesPopUpView.swift */,
+				D3DE26E52A28CCBE006BCFC6 /* SejaPremium.swift */,
+				D3DE26C52A28C1F1006BCFC6 /* PumpkinCheesecake.otf */,
 				D3D81DEA2A1F95680010A554 /* "Descartado" */,
 				D36004F52A02C2DC004E19CF /* Assets.xcassets */,
 				D36004F72A02C2DC004E19CF /* Preview Content */,
@@ -173,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D36004F92A02C2DC004E19CF /* Preview Assets.xcassets in Resources */,
+				D3DE26C62A28C1F1006BCFC6 /* PumpkinCheesecake.otf in Resources */,
 				D36004F62A02C2DC004E19CF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,7 +209,9 @@
 				D3D81DF22A1FA4EE0010A554 /* BoardView.swift in Sources */,
 				D36004F22A02C2DB004E19CF /* Sopa_de_LetrinhasApp.swift in Sources */,
 				D35A6E232A226BB400513FFF /* MakeTaskView.swift in Sources */,
+				D351D4622A27D1E700C6F311 /* NotificationManager.swift in Sources */,
 				D3BC2AD52A21425D00BA6B2D /* TodoView.swift in Sources */,
+				D3DE26E62A28CCBE006BCFC6 /* SejaPremium.swift in Sources */,
 				D39D6D3F2A1CFE7300FA63E9 /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,6 +344,7 @@
 				DEVELOPMENT_TEAM = VNH67NDAE6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Sopa-de-Letrinhas-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -362,6 +377,7 @@
 				DEVELOPMENT_TEAM = VNH67NDAE6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Sopa-de-Letrinhas-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
