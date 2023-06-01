@@ -5,6 +5,7 @@
 //  Created by rsbj on 26/05/23.
 //
 
+
 import SwiftUI
 
 struct Task: Identifiable, Equatable, Decodable, Encodable {
@@ -100,14 +101,16 @@ struct TodoView: View {
                         shouldShow.toggle()
                     }, label: {
                         HStack {
-                            Image(systemName: "plus.circle")
+                            Image(systemName: "plus")
                                 .resizable()
+                                .bold()
                                 .scaledToFit()
                                 .foregroundColor(.gray)
-                                .frame(width: 30,height: 30)
-                            Text("Adicionar Task")
+                                .frame(width: 18,height: 18)
+                                .padding(.trailing, 10)
+                            Text("Adicione suas tarefas do dias!")
                                 .foregroundColor(.gray)
-                                .font(.title)
+                                .font(.title2)
                         }
                     }).buttonStyle(.borderless)
                         .padding(.vertical,5)

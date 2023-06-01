@@ -15,12 +15,16 @@ struct BoardView: View {
         formater.dateStyle = .medium
         return formater
     }
+  
     var formatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH"
         return formatter
     }
     @AppStorage("status") var currentStatus = "Triste"
+
+    var dicionario = ["Jan":"Jan", "Feb":"Fev", "Mar":"Mar", "Apr":"Abr", "May":"Mai", "Jun":"Jun","Jul":"Jul", "Aug":"Ago", "Sep":"Set", "Oct":"Out", "Nov":"Nov", "Dec":"Dez"]
+
     
     var body: some View {
         GeometryReader { geo in
@@ -53,7 +57,7 @@ struct BoardView: View {
                                     .bold()
                                     .foregroundColor(.black)
                                     .minimumScaleFactor(0.8)
-                                Text(String(dateFormater.string(from: currentDate)).dropLast(5).dropFirst(3))
+                                Text(dicionario[String(dateFormater.string(from: currentDate).dropLast(5).dropFirst(3))]!)
                                     .font(.largeTitle)
                                     .foregroundColor(.black)
                                     .minimumScaleFactor(0.8)
