@@ -16,13 +16,6 @@ struct MoodView: View {
     
     @AppStorage("mood") var mood: String = ""
     
-    var boldText: Text
-    init() {
-        boldText = Text("Você está triste...")
-            .font(.system(size: 20))
-            .bold()
-    }
-    
     let moods = ["happy", "sad", "angry", "anxious", "neutral"]
     
     var body: some View {
