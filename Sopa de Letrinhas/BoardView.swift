@@ -18,14 +18,15 @@ struct BoardView: View {
         formater.dateStyle = .medium
         return formater
     }
+    
+    @EnvironmentObject var currentStatus: MoodManager
   
     var formatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH"
         return formatter
     }
-    @AppStorage("status") var currentStatus = "Triste"
-
+    
     var dicionario = ["Jan":"Jan", "Feb":"Fev", "Mar":"Mar", "Apr":"Abr", "May":"Mai", "Jun":"Jun","Jul":"Jul", "Aug":"Ago", "Sep":"Set", "Oct":"Out", "Nov":"Nov", "Dec":"Dez","an":"Jan", "eb":"Fev", "ar":"Mar", "pr":"Abr", "ay":"Mai", "un":"Jun","ul":"Jul", "ug":"Ago", "ep":"Set", "ct":"Out", "ov":"Nov", "ec":"Dez"]
 
     
@@ -135,7 +136,7 @@ struct BoardView: View {
                                         Image("postitLaranja")
                                             .resizable()
                                             .frame(width: geo.size.width/5, height: geo.size.width/5)
-                                        Text(getTextForStatus(currentStatus))
+                                        Text(getTextForStatus(currentStatus.currentStatus))
                                             .foregroundColor(.black)
                                             .frame(width: geo.size.width/6, height: geo.size.height/5)
                                             .minimumScaleFactor(0.5)
@@ -155,15 +156,15 @@ struct BoardView: View {
     
     func getTextForStatus(_ status: String) -> String {
         switch status {
-        case "Triste":
+        case "sad":
             return "Tá tudo certo, nem sempre estaremos bem! Talvez você não seja tão produtivo hoje, mantenha isso em mente e busque não se cobrar tanto. Vai dar bom!"
-        case "Ansioso":
+        case "anxious":
             return "Tá tudo certo, nem sempre estaremos bem! Talvez você não seja tão produtivo hoje, mantenha isso em mente e busque não se cobrar tanto. Vai dar bom!"
-        case "Feliz":
+        case "happy":
             return "Que massa! Que tal tentar realizar atividades que você está querendo muito concluir? Lembre de ter cuidado para não se sobrecarregar. Bora simbora!"
-        case "Irritado":
+        case "angry":
             return "Sei que não é o melhor momento. Se tiver que fazer algo, que tal priorizar apenas o que é necessário e, se surgir a oportunidade, tirar um tempo para conversar com alguém."
-        case "Neutro":
+        case "neutral":
             return "Massa! Bora começar o dia com o pé direito organizando as tarefas."
         default:
             return ""

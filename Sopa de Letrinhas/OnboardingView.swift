@@ -17,14 +17,16 @@ struct OnboardingView: View {
             if viewRouter.currentPage == 1 {
                 CustomScreen(viewRouter: viewRouter, imageName: "happy", title: "Monitore suas emoções", buttonText: "Próximo", text:"Inicie e finalize seu dia registrando como você está se sentindo")
             } else if viewRouter.currentPage == 2 {
-                CustomScreen(viewRouter: viewRouter, imageName: "checkboxIcon", title: "Liste suas atividades", buttonText: "Próximo", text: "Tenha uma representação visual do seu planejamento diário")
+                CustomScreen(viewRouter: viewRouter, imageName: "CheckboxIcon", title: "Liste suas atividades", buttonText: "Próximo", text: "Tenha uma representação visual do seu planejamento diário")
             } else if viewRouter.currentPage == 3 {
-                CustomScreen(viewRouter: viewRouter, imageName: "thinking", title: "Tire um momento para reflexão", buttonText: "Concluir", text:"Receba notificações que te auxiliam nesse processo")
+                CustomScreen(viewRouter: viewRouter, imageName: "Thinking", title: "Tire um momento para reflexão", buttonText: "Concluir", text:"Receba notificações que te auxiliam nesse processo")
             }
         }
         .background(Color.white)
         .cornerRadius(10)
         .frame(width: 601, height: 488)
+        .frame(maxWidth: 601, maxHeight: 488)
+        .frame(minWidth: 601, minHeight: 488)
         .overlay(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(Color.black, lineWidth: 1)
@@ -39,17 +41,23 @@ struct CustomScreen: View {
     let buttonText: String
     let text: String
 
+    let currentStatus2: MoodManager = MoodManager()
+    @StateObject var dataController = CoreDataViewModel()
+    
     var body: some View {
         VStack {
             if viewRouter.currentPage != 3 {
-                Button(action: {
-                    // Ação a ser executada quando o botão Pular for pressionado
-                }, label: {
+                NavigationLink {
+                    MainView()
+                        .navigationBarBackButtonHidden()
+                        .environmentObject(currentStatus2)
+                        .environment(\.managedObjectContext, dataController.container.viewContext)
+                } label: {
                     Text("Pular")
                         .foregroundColor(.black)
-                }).buttonStyle(.borderless)
-                .padding(.leading, 515)
-                    .padding(.top, 20)
+                }.buttonStyle(.borderless)
+                    .padding(.leading, 515)
+                        .padding(.top, 20)
             }
             
             VStack{
@@ -65,22 +73,35 @@ struct CustomScreen: View {
             }.padding(.top, 80)
             
             Spacer()
-            
-            Button(action: {
-                if viewRouter.currentPage < 3 {
-                    viewRouter.currentPage += 1
-                } else {
-                    // Ação a ser executada quando o botão Concluir for pressionado
-                }
-            }, label: {
-                ZStack{
-                    Image("ExtraLargeButton")
-                    Text(buttonText)
-                        .foregroundColor(.black)
-                }
-            }).buttonStyle(.borderless)
-            .padding(.top, 80)
-            .padding(.bottom, 40)
+            if viewRouter.currentPage < 3 {
+                Button(action: {
+                        viewRouter.currentPage += 1
+                }, label: {
+                    ZStack{
+                        Image("ExtraLargeButton")
+                        Text(buttonText)
+                            .foregroundColor(.black)
+                    }
+                }).buttonStyle(.borderless)
+                    .padding(.top, 80)
+                    .padding(.bottom, 40)
+            }
+            else {
+                NavigationLink {
+                    MainView()
+                        .navigationBarBackButtonHidden()
+                        .environmentObject(currentStatus2)
+                        .environment(\.managedObjectContext, dataController.container.viewContext)
+                } label: {
+                    ZStack{
+                        Image("ExtraLargeButton")
+                        Text(buttonText)
+                            .foregroundColor(.black)
+                    }
+                }.buttonStyle(.borderless)
+                    .padding(.top, 80)
+                    .padding(.bottom, 40)
+            }
         }.padding(.horizontal, 20)
             .frame(width: 601, height: 488)
     }

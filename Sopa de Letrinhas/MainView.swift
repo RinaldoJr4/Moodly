@@ -12,10 +12,12 @@ struct MainView: View {
     @AppStorage("onboarding") var didOnboardingHappened = false
     @State var shouldShow = false
     @State var birthDate = Date.now
+    @AppStorage("status") var status: String = "sad"
     
     @EnvironmentObject var currentStatus: MoodManager
     
     @State var shouldShow2 = false
+    @State var shouldShow3 = false
         
     var body: some View {
         GeometryReader{ geo in
@@ -44,23 +46,12 @@ struct MainView: View {
                         CalendarioView()
                         .frame(height: geo.size.height/5)
                             .padding(.bottom,geo.size.height/30)
-                        ZStack{
-                            Image("postitInteiro")
-                                .resizable()
-                            StatusView(status: "tô triste")
-                                .environmentObject(currentStatus)
-                        }.padding(.vertical,geo.size.height/30)
-                        ZStack{
-                            Image("postitDobrado")
-                                .resizable()
-                            LembretesView()
-                        }
                             .onTapGesture {
                                 shouldShow2.toggle()
                             }
                         
-                        
                         StatusView(status: "tô triste")
+                            .environmentObject(currentStatus)
                         .padding(.vertical,geo.size.height/30)
                            
                         LembretesView()
@@ -68,14 +59,15 @@ struct MainView: View {
                         
                     }.padding(.leading,geo.size.width/30)
                 }.padding(geo.size.height/22.5)
-                    .sheet(isPresented: $shouldShow, content: {OnboardingView()})
-                
+                    .sheet(isPresented: $shouldShow3, content: {MoodView()})
             }.onAppear(){
                 if !didOnboardingHappened {
-                    shouldShow.toggle()
+                    shouldShow3.toggle()
                 }
+                didOnboardingHappened = true
+                currentStatus.currentStatus = status
             }
-        }.frame(minWidth: 900,minHeight: 562.5)
+        }.frame(minWidth: 900,minHeight: 600)
             .overlay {
                 overlayView()
                     .sheet(isPresented: $shouldShow2, content: {SejaPremium()})

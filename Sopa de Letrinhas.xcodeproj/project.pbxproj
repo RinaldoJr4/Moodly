@@ -50,7 +50,6 @@
 		D3D81DEF2A1F964E0010A554 /* LembretesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LembretesView.swift; sourceTree = "<group>"; };
 		D3D81DF12A1FA4EE0010A554 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		D3DE26C52A28C1F1006BCFC6 /* PumpkinCheesecake.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PumpkinCheesecake.otf; sourceTree = "<group>"; };
-		D3DE26C72A28C20D006BCFC6 /* Sopa-de-Letrinhas-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Sopa-de-Letrinhas-Info.plist"; sourceTree = SOURCE_ROOT; };
 		D3DE26E52A28CCBE006BCFC6 /* SejaPremium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SejaPremium.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,7 +83,6 @@
 		D36004F02A02C2DB004E19CF /* Sopa de Letrinhas */ = {
 			isa = PBXGroup;
 			children = (
-				D3DE26C72A28C20D006BCFC6 /* Sopa-de-Letrinhas-Info.plist */,
 				D36004F12A02C2DB004E19CF /* Sopa_de_LetrinhasApp.swift */,
 				D36E1B602A23B89600923515 /* Moodly.xcdatamodeld */,
 				D3CE73152A1D733B004F91A8 /* OnboardingView.swift */,
@@ -341,7 +339,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Sopa de Letrinhas/Preview Content\"";
-				DEVELOPMENT_TEAM = VNH67NDAE6;
+				DEVELOPMENT_TEAM = B6XWN7H84M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Sopa-de-Letrinhas-Info.plist";
@@ -374,7 +372,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Sopa de Letrinhas/Preview Content\"";
-				DEVELOPMENT_TEAM = VNH67NDAE6;
+				DEVELOPMENT_TEAM = B6XWN7H84M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Sopa-de-Letrinhas-Info.plist";

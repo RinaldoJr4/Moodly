@@ -15,6 +15,8 @@ struct MoodView: View {
     @Environment(\.dismiss) var presentation
     
     @AppStorage("mood") var mood: String = ""
+    @AppStorage("status") var status: String = "neutral"
+
     
     let moods = ["happy", "sad", "angry", "anxious", "neutral"]
     
@@ -26,7 +28,8 @@ struct MoodView: View {
             
             VStack {
                 Text("STATUS")
-                    .font(.title)
+                    .font(.custom("PumpkinCheesecakeRegular", size: 60))
+                    .foregroundColor(.black)
                     .padding(.top, 49)
                     .fontWeight(.bold)
                     .foregroundColor(Color("madeira100"))
@@ -132,6 +135,7 @@ struct MoodView: View {
                         currentStatus.currentStatus = selectedButton2!
                         StatusManager.shared.updateStatus(with: mood)
                         NotificationCenter.default.post(name: NSNotification.Name("DismissMoodView"), object: nil)
+                        status = currentStatus.currentStatus
                     }
                 }){
                     Text("ok")

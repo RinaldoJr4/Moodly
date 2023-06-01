@@ -19,19 +19,21 @@ struct Sopa_de_LetrinhasApp: App {
     
     let currentStatus2: MoodManager = MoodManager()
 
+    @AppStorage("onboarding") var didOnboardingHappened = false
 
     
     var body: some Scene {
         WindowGroup {
-            MainView()
-                .environmentObject(currentStatus2)
-                .environment(\.managedObjectContext, dataController.container.viewContext)
-                .onAppear(){
-//                    namessStored = [""]
-//                    isDeletedsStored = [false]
-//                    isCompletedsStored = [false]
-//                    creationDatesStored = [Date()]
+            NavigationStack{
+                if didOnboardingHappened {
+                    MainView()
+                        .environmentObject(currentStatus2)
+                        .environment(\.managedObjectContext, dataController.container.viewContext)
                 }
+                else {
+                    OnboardingView()
+                }
+            }
         }
     }
 }
