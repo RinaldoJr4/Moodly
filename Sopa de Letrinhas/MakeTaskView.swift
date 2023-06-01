@@ -75,7 +75,7 @@ struct MakeTaskView: View {
                     }
                 }, label: {
                     ZStack {
-                        Rectangle().foregroundColor(.blue).frame(width: 200,height: 50)
+                        Rectangle().foregroundColor(Color("madeira100")).frame(width: 200,height: 50)
                             .cornerRadius(15)
                         Text("Ok")
                             .font(.title2)

@@ -40,7 +40,7 @@ class NotificationManager {
                 
                 content.title = "Reflita"
                 content.subtitle = "Que tal dar uma paradinha para refletir?"
-                content.body = "This is the body text"
+                content.body = "É sempre muito bom dedicar uma parte do seu dia para pensar como ele está sendo"
                 content.sound = UNNotificationSound.default
                 content.categoryIdentifier = "barbieCoins"
                 
@@ -106,9 +106,9 @@ class NotificationManager {
             if settings.authorizationStatus == .authorized {
                 let content = UNMutableNotificationContent()
                 
-                content.title = "Reflita"
-                content.subtitle = "Que tal dar uma paradinha para refletir?"
-                content.body = "This is the body text"
+                content.title = "Descanse"
+                content.subtitle = "Que tal dar uma paradinha e descansar?"
+                content.body = "Descansar entre as atividades lhe torna mais produtivo!"
                 content.sound = UNNotificationSound.default
                 content.categoryIdentifier = "barbieCoins"
                 
@@ -174,9 +174,9 @@ class NotificationManager {
             if settings.authorizationStatus == .authorized {
                 let content = UNMutableNotificationContent()
                 
-                content.title = "Reflita"
-                content.subtitle = "Que tal dar uma paradinha para refletir?"
-                content.body = "This is the body text"
+                content.title = "Dormir"
+                content.subtitle = "Boa noite!"
+                content.body = "Está chegando a hora de Dormir 😴"
                 content.sound = UNNotificationSound.default
                 content.categoryIdentifier = "barbieCoins"
                 
