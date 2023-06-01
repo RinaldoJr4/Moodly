@@ -27,6 +27,22 @@ struct MoodView: View {
                 .foregroundColor(Color("papel20"))
             
             VStack {
+                HStack {
+                    Spacer()
+                    Button {
+                        presentation.callAsFunction()
+                    } label: {
+                        Text("X")
+                            .font(.title)
+                            .bold()
+                            .foregroundColor(Color.black)
+                    }.buttonStyle(.borderless)
+                }.padding(.trailing, 20)
+                    .padding(.top, 20)
+                Spacer()
+            }
+            
+            VStack {
                 Text("STATUS")
                     .font(.custom("PumpkinCheesecakeRegular", size: 60))
                     .foregroundColor(.black)

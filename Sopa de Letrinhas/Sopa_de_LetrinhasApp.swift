@@ -26,7 +26,7 @@ struct Sopa_de_LetrinhasApp: App {
         WindowGroup {
             NavigationStack{
                 if didOnboardingHappened {
-                    MainView()
+                   OnboardingView()
                         .environmentObject(currentStatus2)
                         .environment(\.managedObjectContext, dataController.container.viewContext)
                 }

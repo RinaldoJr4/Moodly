@@ -36,10 +36,26 @@ struct BoardView: View {
                 HStack {
                     VStack {
                         HStack {
-                            Text("Bom dia, vamos planejar suas atividades?")
-                                .font(.custom("PumpkinCheesecakeRegular", size: 40))
-                                .foregroundColor(.black)
-                                .minimumScaleFactor(0.8)                      .padding(.vertical,geo.size.height/25)
+                            
+                            if ((Int(formatter.string(from: today)) ?? 0) <= 11) {
+                                // Madrugada
+                                Text("Bom dia, vamos planejar suas atividades?")
+                                    .font(.custom("PumpkinCheesecakeRegular", size: 40))
+                                    .foregroundColor(.black)
+                                    .minimumScaleFactor(0.8)                      .padding(.vertical,geo.size.height/25)
+                            } else if ((Int(formatter.string(from: today)) ?? 0) >= 18){
+                                // Noite
+                                Text("Boa noite, vamos planejar suas atividades?")
+                                    .font(.custom("PumpkinCheesecakeRegular", size: 40))
+                                    .foregroundColor(.black)
+                                    .minimumScaleFactor(0.8)                      .padding(.vertical,geo.size.height/25)
+                            } else {
+                                // Dia
+                                Text("Boa tarde, vamos planejar suas atividades?")
+                                    .font(.custom("PumpkinCheesecakeRegular", size: 40))
+                                    .foregroundColor(.black)
+                                    .minimumScaleFactor(0.8)                      .padding(.vertical,geo.size.height/25)
+                            }
                             Spacer()
                         }.padding(geo.size.width/80)
                         

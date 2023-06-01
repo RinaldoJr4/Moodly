@@ -13,7 +13,7 @@ class MoodManager: ObservableObject {
 }
 
 struct StatusView: View {
-    
+    @Environment(\.dismiss) var presentation
     @EnvironmentObject var currentStatus: MoodManager
     
     @State var shouldShow = false
@@ -29,6 +29,7 @@ struct StatusView: View {
                 
                 VStack {
                     HStack {
+
                         Text("Status")
                             .padding(.leading,geo.size.width/15)
                             .font(.custom("PumpkinCheesecakeRegular", size: 40))
