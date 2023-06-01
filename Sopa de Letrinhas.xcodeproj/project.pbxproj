@@ -25,6 +25,7 @@
 		D3D81DF02A1F964E0010A554 /* LembretesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D81DEF2A1F964E0010A554 /* LembretesView.swift */; };
 		D3D81DF22A1FA4EE0010A554 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D81DF12A1FA4EE0010A554 /* BoardView.swift */; };
 		D3DE26C62A28C1F1006BCFC6 /* PumpkinCheesecake.otf in Resources */ = {isa = PBXBuildFile; fileRef = D3DE26C52A28C1F1006BCFC6 /* PumpkinCheesecake.otf */; };
+		D3DE26E62A28CCBE006BCFC6 /* SejaPremium.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DE26E52A28CCBE006BCFC6 /* SejaPremium.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		D3D81DF12A1FA4EE0010A554 /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		D3DE26C52A28C1F1006BCFC6 /* PumpkinCheesecake.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PumpkinCheesecake.otf; sourceTree = "<group>"; };
 		D3DE26C72A28C20D006BCFC6 /* Sopa-de-Letrinhas-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Sopa-de-Letrinhas-Info.plist"; sourceTree = SOURCE_ROOT; };
+		D3DE26E52A28CCBE006BCFC6 /* SejaPremium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SejaPremium.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				D3D81DED2A1F961E0010A554 /* StatusView.swift */,
 				D3D81DEF2A1F964E0010A554 /* LembretesView.swift */,
 				D338494F2A22AA8D00072D18 /* LembretesPopUpView.swift */,
+				D3DE26E52A28CCBE006BCFC6 /* SejaPremium.swift */,
 				D3DE26C52A28C1F1006BCFC6 /* PumpkinCheesecake.otf */,
 				D3D81DEA2A1F95680010A554 /* "Descartado" */,
 				D36004F52A02C2DC004E19CF /* Assets.xcassets */,
@@ -204,6 +207,7 @@
 				D35A6E232A226BB400513FFF /* MakeTaskView.swift in Sources */,
 				D351D4622A27D1E700C6F311 /* NotificationManager.swift in Sources */,
 				D3BC2AD52A21425D00BA6B2D /* TodoView.swift in Sources */,
+				D3DE26E62A28CCBE006BCFC6 /* SejaPremium.swift in Sources */,
 				D39D6D3F2A1CFE7300FA63E9 /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

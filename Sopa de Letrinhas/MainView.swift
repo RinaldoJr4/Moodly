@@ -13,6 +13,8 @@ struct MainView: View {
     
     @State var shouldShow = false
     @State var birthDate = Date.now
+    
+    @State var shouldShow2 = false
         
     var body: some View {
         GeometryReader{ geo in
@@ -41,6 +43,10 @@ struct MainView: View {
                         CalendarioView()
                         .frame(height: geo.size.height/5)
                             .padding(.bottom,geo.size.height/30)
+                            .onTapGesture {
+                                shouldShow2.toggle()
+                            }
+                        
                         
                         StatusView(status: "tô triste")
                         .padding(.vertical,geo.size.height/30)
@@ -60,6 +66,7 @@ struct MainView: View {
         }.frame(minWidth: 900,minHeight: 562.5)
             .overlay {
                 overlayView()
+                    .sheet(isPresented: $shouldShow2, content: {SejaPremium()})
             }
     }
 }

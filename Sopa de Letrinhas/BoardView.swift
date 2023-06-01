@@ -8,6 +8,8 @@ import SwiftUI
 
 struct BoardView: View {
     
+    @State var shouldShow = false
+    
     var currentDate = Date()
     var currentDateCalendar = Calendar.current
     let today  = Date.now
@@ -62,6 +64,9 @@ struct BoardView: View {
                                     .foregroundColor(.black)
                                     .minimumScaleFactor(0.8)
                             }.padding(.trailing, geo.size.width/30)
+                                .onTapGesture {
+                                    shouldShow.toggle()
+                                }
                         }
                         Spacer().layoutPriority(200)
                         Spacer().layoutPriority(200).frame(height: geo.size.height/6)
@@ -144,6 +149,7 @@ struct BoardView: View {
                         .padding(.trailing)
                 }.clipped()
             }.scrollIndicators(.hidden)
+            .sheet(isPresented: $shouldShow, content: {SejaPremium()})
         }
     }
     

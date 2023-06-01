@@ -17,6 +17,8 @@ struct LembretePopUpView: View {
     @AppStorage("descanso") var isDescansoOn = false
     @AppStorage("dormir") var isDormirOn = false
     
+    @State var shouldShow2 = false
+    
     var body: some View {
         ZStack {
             
@@ -110,7 +112,11 @@ struct LembretePopUpView: View {
                 }.padding()
                     .border(.black,width: 2)
             }.padding(30)
+                .onTapGesture {
+                    shouldShow2.toggle()
+                }
         }
+        .sheet(isPresented: $shouldShow2, content: {SejaPremium()})
         .frame(width: 500,height: 400)
     }
 }
