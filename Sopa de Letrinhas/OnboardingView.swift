@@ -71,8 +71,7 @@ struct CustomScreen: View {
                         .padding(.leading, 515)
                         .padding(.top, 20)
                 }.buttonStyle(.borderless)
-                    
-                    
+                
             }
             VStack{
                 VStack{

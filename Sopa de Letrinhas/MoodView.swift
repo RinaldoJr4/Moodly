@@ -51,7 +51,7 @@ struct MoodView: View {
                     .foregroundColor(Color("madeira100"))
                 
                 Text("Como você está se sentindo hoje?")
-                    .frame(width: 496, height: 155)
+                    .frame(width: 496, height: 135)
                     .padding(.trailing, 117)
                     .foregroundColor(Color("quasepreto100"))
                     .font(.custom("SFPro", size: 24))
@@ -96,7 +96,7 @@ struct MoodView: View {
 
                 if selectedButton2 == ("happy") {
                     Text("Você está feliz, que massa! Que tal tentar realizar atividades que você está querendo muito concluir? Lembre de ter cuidado para não se sobrecarregar. Bora simbora!")
-                        .frame(width: 496, height: 155)
+                        .frame(width: 496, height: 130)
                         .foregroundColor(Color("quasepreto100"))
                         .font(.system(size: 18))
                         .italic(true)
@@ -106,7 +106,7 @@ struct MoodView: View {
                 else if selectedButton2 == ("sad") {
                     
                     Text("Você está triste... Tá tudo certo, nem sempre estaremos bem! Talvez você não seja tão produtivo hoje, mantenha isso em mente e busque não se cobrar tanto. Vai dar bom!")
-                        .frame(width: 496, height: 155)
+                        .frame(width: 496, height: 130)
                         .foregroundColor(Color("quasepreto100"))
                         .font(.system(size: 18))
                         .italic(true)
@@ -116,7 +116,7 @@ struct MoodView: View {
                 }
                 else if selectedButton2 == ("angry") {
                     Text("Você está irritado. Sei que não é o melhor momento. Se tiver que fazer algo, que tal priorizar apenas o que é necessário\ne, se surgir a oportunidade, tirar um tempo para conversar com alguém.")
-                        .frame(width: 496, height: 155)
+                        .frame(width: 496, height: 130)
                         .foregroundColor(Color("quasepreto100"))
                         .font(.system(size: 18))
                         .italic(true)
@@ -125,7 +125,7 @@ struct MoodView: View {
                 }
                 else if selectedButton2 == ("anxious") {
                     Text("Você está ansioso. Tá tudo certo, nem sempre estaremos bem! Talvez você não seja tão produtivo hoje, mantenha isso em mente e busque não se cobrar tanto. Vai dar bom!")
-                        .frame(width: 496, height: 155)
+                        .frame(width: 496, height: 130)
                         .foregroundColor(Color("quasepreto100"))
                         .font(.system(size: 18))
                         .italic(true)
@@ -134,7 +134,7 @@ struct MoodView: View {
                 }
                 else if selectedButton2 == ("neutral") {
                     Text("Massa! Bora começar o dia com o pé direito organizando as tarefas.")
-                        .frame(width: 496, height: 155)
+                        .frame(width: 496, height: 130)
                         .foregroundColor(Color("quasepreto100"))
                         .font(.system(size: 18))
                         .italic(true)
