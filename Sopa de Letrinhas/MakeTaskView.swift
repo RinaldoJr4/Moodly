@@ -41,15 +41,14 @@ struct MakeTaskView: View {
             
             VStack {
                 Text("Nova Tarefa")
-                    .font(.largeTitle)
-                    .bold()
+                    .font(.custom("PumpkinCheesecakeRegular", size: 40))
                     .foregroundColor(.black)
                 Spacer()
                 TextField("escreva o nome da tarefa...", text: $taskName)
                     .font(.title2)
                     .foregroundColor(.black)
                     .padding()
-                    .border(.black,width: 2)
+                    .border(Color(white: 0.9),width: 1)
                     .frame(width: 300,height: 50)
                     .textFieldStyle(.plain)
                     .preferredColorScheme(.light)
@@ -78,7 +77,7 @@ struct MakeTaskView: View {
                     ZStack {
                         Rectangle().foregroundColor(.blue).frame(width: 200,height: 50)
                             .cornerRadius(15)
-                        Text("Criar task")
+                        Text("Ok")
                             .font(.title2)
                             .bold()
                             .foregroundColor(.white)
@@ -86,7 +85,7 @@ struct MakeTaskView: View {
                 }).buttonStyle(.borderless)
             }.padding(40)
         }
-        .frame(width: 500,height: 300)
+        .frame(width: 500,height: 400)
         
     }
 }

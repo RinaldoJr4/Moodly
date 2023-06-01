@@ -59,13 +59,19 @@ struct LembretePopUpView: View {
             VStack(spacing: 5) {
                 HStack {
                     Text("Lembretes")
-                        .bold()
-                        .font(.largeTitle)
+                        .font(.custom("PumpkinCheesecakeRegular", size: 40))
+                        .foregroundColor(.black)
                     
                 }.padding(.bottom,20)
+                Text("Ative os lembretes que você quer receber durante o dia!")
+                    .font(.title2)
+                    .padding(.bottom,20)
+                
                 HStack {
                     Text("Reflexão")
                         .font(.title)
+                        .foregroundColor(.black)
+                    
                     Spacer()
                     Text("(18:00)")
                         .font(.title)
@@ -78,6 +84,8 @@ struct LembretePopUpView: View {
                 HStack {
                     Text("Descanso")
                         .font(.title)
+                        .foregroundColor(.black)
+
                     Spacer()
                     Text("(12:30)")
                         .font(.title)
@@ -90,6 +98,8 @@ struct LembretePopUpView: View {
                 HStack {
                     Text("Dormir")
                         .font(.title)
+                        .foregroundColor(.black)
+
                     Spacer()
                     Text("(21:30)")
                         .font(.title)
@@ -101,7 +111,7 @@ struct LembretePopUpView: View {
                     .border(.black,width: 2)
             }.padding(30)
         }
-        .frame(width: 500,height: 300)
+        .frame(width: 500,height: 400)
     }
 }
 

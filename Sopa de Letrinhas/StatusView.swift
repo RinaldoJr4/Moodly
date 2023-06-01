@@ -25,8 +25,7 @@ struct StatusView: View {
                     HStack {
                         Text("Status")
                             .padding(.leading,geo.size.width/15)
-                            .font(.largeTitle)
-                            .bold()
+                            .font(.custom("PumpkinCheesecakeRegular", size: 40))
                             .lineLimit(1)
                             .foregroundColor(.black)
                             .padding(.top,geo.size.height/8)

@@ -33,8 +33,7 @@ struct  CalendarioView: View {
                 VStack {
                     HStack {
                         Text(daysOfTheWeek[todayCalendar.component(.weekday, from: today)])
-                            .font(.largeTitle)
-                            .bold()
+                            .font(.custom("PumpkinCheesecakeRegular", size: 40))
                             .foregroundColor(.black)
                             .minimumScaleFactor(0.8)
                             .padding(.leading,geo.size.width/15)

@@ -7,6 +7,7 @@
 import SwiftUI
 
 struct BoardView: View {
+    
     var currentDate = Date()
     var currentDateCalendar = Calendar.current
     let today  = Date.now
@@ -23,7 +24,7 @@ struct BoardView: View {
     }
     @AppStorage("status") var currentStatus = "Triste"
 
-    var dicionario = ["Jan":"Jan", "Feb":"Fev", "Mar":"Mar", "Apr":"Abr", "May":"Mai", "Jun":"Jun","Jul":"Jul", "Aug":"Ago", "Sep":"Set", "Oct":"Out", "Nov":"Nov", "Dec":"Dez"]
+    var dicionario = ["Jan":"Jan", "Feb":"Fev", "Mar":"Mar", "Apr":"Abr", "May":"Mai", "Jun":"Jun","Jul":"Jul", "Aug":"Ago", "Sep":"Set", "Oct":"Out", "Nov":"Nov", "Dec":"Dez","an":"Jan", "eb":"Fev", "ar":"Mar", "pr":"Abr", "ay":"Mai", "un":"Jun","ul":"Jul", "ug":"Ago", "ep":"Set", "ct":"Out", "ov":"Nov", "ec":"Dez"]
 
     
     var body: some View {
@@ -33,8 +34,7 @@ struct BoardView: View {
                     VStack {
                         HStack {
                             Text("Bom dia, vamos planejar suas atividades?")
-                                .font(.largeTitle)
-                                .bold()
+                                .font(.custom("PumpkinCheesecakeRegular", size: 40))
                                 .foregroundColor(.black)
                                 .minimumScaleFactor(0.8)                      .padding(.vertical,geo.size.height/25)
                             Spacer()
@@ -49,12 +49,12 @@ struct BoardView: View {
                         HStack{
                             Spacer()
                             Rectangle().foregroundColor(.black)
-                                .frame(width: 2)
+                                .frame(width: 4)
                                 .layoutPriority(101)
+                                .cornerRadius(20)
                             VStack{
                                 Text("\(currentDateCalendar.component(.day, from: currentDate))")
-                                    .font(.system(size: 80))
-                                    .bold()
+                                    .font(.system(size: 65))
                                     .foregroundColor(.black)
                                     .minimumScaleFactor(0.8)
                                 Text(dicionario[String(dateFormater.string(from: currentDate).dropLast(5).dropFirst(3))]!)
@@ -70,8 +70,8 @@ struct BoardView: View {
                             if ((Int(formatter.string(from: today)) ?? 0) >= 18){
                                 VStack{
                                     HStack{
-                                        // Sombra Postit Azul
-                                        Rectangle().foregroundColor(Color(white: 0.7))
+                                        // Sombra Postit Vermelho
+                                        Rectangle().foregroundColor(Color(white: 0.8))
                                             .frame(width: geo.size.width/5, height: geo.size.width/5)
                                         Spacer()
                                     }.padding(.top,geo.size.width/23)
@@ -85,12 +85,15 @@ struct BoardView: View {
                                 
                                 VStack{
                                     HStack{
-                                        // Postit Azul
+                                        // Postit Vermelho
                                         ZStack{
-                                            Rectangle().foregroundColor(.blue)
+                                            Image("postitVermelho")
+                                                .resizable()
                                                 .frame(width: geo.size.width/5, height: geo.size.width/5)
                                             Text("Lembre-se de ao final do dia refletir sobre suas emoções, avaliando se houve mudanças e o que pode ter impactado.")
-                                                .frame(width: 100, height: 100)
+                                                .foregroundColor(.black)
+                                                .frame(width: geo.size.width/6, height: geo.size.height/5)
+                                                .minimumScaleFactor(0.5)
                                         }
                                         Spacer()
                                     }.padding(.top,geo.size.width/25)
@@ -109,9 +112,9 @@ struct BoardView: View {
                                 }
                                 
                                 HStack{
-                                    // Sombra Postit Vermelho
+                                    // Sombra Postit Laranja
                                     Spacer()
-                                    Rectangle().foregroundColor(Color(white: 0.7))
+                                    Rectangle().foregroundColor(Color(white: 0.8))
                                         .frame(width: geo.size.width/5, height: geo.size.width/5)
                                 }.padding(.bottom,geo.size.width/30)
                             }
@@ -121,13 +124,17 @@ struct BoardView: View {
                                         .frame(width: geo.size.width/5, height: geo.size.width/5)
                                 }
                                 HStack{
-                                    // Postit Vermelho
+                                    // Postit Laranja
                                     Spacer()
                                     ZStack {
-                                        Rectangle().foregroundColor(.red)
+                                        Image("postitLaranja")
+                                            .resizable()
                                             .frame(width: geo.size.width/5, height: geo.size.width/5)
                                         Text(getTextForStatus(currentStatus))
-                                            .frame(width: 100, height: 100)
+                                            .foregroundColor(.black)
+                                            .frame(width: geo.size.width/6, height: geo.size.height/5)
+                                            .minimumScaleFactor(0.5)
+                                    
                                     }
                                 }.padding(.bottom,geo.size.width/25)
                                     .padding(.trailing,geo.size.width/300)
@@ -155,6 +162,12 @@ struct BoardView: View {
         default:
             return ""
         }
+    }
+    
+    init() {
+        let cfURL = Bundle.main.url(forResource: "PumpkinCheesecake", withExtension: "otf")! as CFURL
+        
+        CTFontManagerRegisterFontsForURL(cfURL, CTFontManagerScope.process, nil)
     }
 }
 

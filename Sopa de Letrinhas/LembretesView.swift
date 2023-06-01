@@ -28,8 +28,7 @@ struct  LembretesView: View {
                 VStack {
                     HStack {
                         Text("Lembretes")
-                            .font(.largeTitle)
-                            .bold()
+                            .font(.custom("PumpkinCheesecakeRegular", size: 40))
                             .foregroundColor(.black)
                             .minimumScaleFactor(0.7)
                             .padding(.leading,geo.size.width/15)
