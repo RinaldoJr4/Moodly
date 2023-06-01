@@ -9,10 +9,11 @@ import SwiftUI
 
 struct MainView: View {
     
-    @AppStorage("onboarding") var didOnboardingHappend = false
-    
+    @AppStorage("onboarding") var didOnboardingHappened = false
     @State var shouldShow = false
     @State var birthDate = Date.now
+    
+    @EnvironmentObject var currentStatus: MoodManager
     
     @State var shouldShow2 = false
         
@@ -43,6 +44,17 @@ struct MainView: View {
                         CalendarioView()
                         .frame(height: geo.size.height/5)
                             .padding(.bottom,geo.size.height/30)
+                        ZStack{
+                            Image("postitInteiro")
+                                .resizable()
+                            StatusView(status: "tô triste")
+                                .environmentObject(currentStatus)
+                        }.padding(.vertical,geo.size.height/30)
+                        ZStack{
+                            Image("postitDobrado")
+                                .resizable()
+                            LembretesView()
+                        }
                             .onTapGesture {
                                 shouldShow2.toggle()
                             }
@@ -59,7 +71,7 @@ struct MainView: View {
                     .sheet(isPresented: $shouldShow, content: {OnboardingView()})
                 
             }.onAppear(){
-                if !didOnboardingHappend {
+                if !didOnboardingHappened {
                     shouldShow.toggle()
                 }
             }

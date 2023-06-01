@@ -7,6 +7,9 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    
+    @Environment(\.presentationMode) var presentation
+    @AppStorage("onboarding") var didOnboardingHappened = false
     @StateObject private var viewRouter = ViewRouter()
 
     var body: some View {

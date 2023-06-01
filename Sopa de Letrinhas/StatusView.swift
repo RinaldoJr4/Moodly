@@ -7,50 +7,70 @@
 
 import SwiftUI
 
+
+class MoodManager: ObservableObject {
+    @Published var currentStatus = "sad"
+}
+
 struct StatusView: View {
     
+    @EnvironmentObject var currentStatus: MoodManager
+    
     @State var shouldShow = false
-    
-    @AppStorage("status") var currentStatus = "Triste"
-    
-    var dictionaryStatus = ["Triste":"😭", "Feliz":"🤩"]
+    @State var dictionaryStatus = ["sad":"😭", "happy":"🤩"]
     var status : String
     var body: some View {
         GeometryReader { geo in
-            ZStack{
-                Image("postitInteiro")
-                    .resizable()
-                    .shadow(radius: geo.size.height/80)
-                VStack {
-                    HStack {
-                        Text("Status")
-                            .padding(.leading,geo.size.width/15)
-                            .font(.custom("PumpkinCheesecakeRegular", size: 40))
-                            .lineLimit(1)
-                            .foregroundColor(.black)
-                            .padding(.top,geo.size.height/8)
-                            .padding(.bottom,-geo.size.height/15)
-                            .minimumScaleFactor(0.6)
-                        Spacer()
-                    }
-                    HStack {
-                        HStack {
-                            Text(currentStatus)
-                                .font(.title)
-                                .foregroundColor(.black)
-                                .minimumScaleFactor(0.8)
-                            Spacer()
-                        }.padding(.leading,geo.size.width/32)
-                            .frame(width: geo.size.width/2.2)
-                        Text(dictionaryStatus[currentStatus]!)
-                            .font(.system(size: geo.size.width/2.8))
-                            .shadow(radius: geo.size.width/45)
-                            .minimumScaleFactor(0.8)
-                    }
+            VStack {
+                HStack {
+                    Text("Status")
+                        .padding(.leading,geo.size.width/15)
+                        .font(.largeTitle)
+                        .bold()
+                        .lineLimit(1)
+                        .foregroundColor(.black)
+                        .padding(.top,geo.size.height/8)
+                        .padding(.bottom,-geo.size.height/15)
+                        .minimumScaleFactor(0.6)
+                    Spacer()
                 }
-            }.onTapGesture {
-                shouldShow.toggle()
-            }.sheet(isPresented: $shouldShow, content: {OnboardingView()})
-        }
+                HStack {
+//                    HStack {
+//                        Text(currentStatus.currentStatus)
+//                            .font(.title)
+//                            .foregroundColor(.black)
+//                            .minimumScaleFactor(0.8)
+//                        Spacer()
+//                    }.padding(.leading,geo.size.width/32)
+//                        .frame(width: geo.size.width/2.2)
+                    Image(currentStatus.currentStatus)
+                        .resizable()
+                        .frame(maxWidth: 70,maxHeight: 70)
+                        .frame(minWidth: 50,minHeight: 50)
+                        .scaledToFit()
+                        .padding(.top,geo.size.height/8)
+                        .padding(.bottom,geo.size.height/4)
+//                    Text(dictionaryStatus[currentStatus.currentStatus]!)
+//                        .font(.system(size: geo.size.width/2.8))
+//                        .shadow(radius: geo.size.width/45)
+//                        .minimumScaleFactor(0.8)
+                }
+            }
+        }.onTapGesture {
+            shouldShow.toggle()
+        }.sheet(isPresented: $shouldShow, content: {MoodView()})
+    }
+}
+
+class StatusManager {
+    static let shared = StatusManager()
+    private init() {}
+
+    func updateStatus(with status: String) {
+        // Code to update the status
+        // You can save the status using @AppStorage or any other method you prefer
+        // For example:
+        // @AppStorage("status") var currentStatus = "Triste"
+        // currentStatus = status
     }
 }

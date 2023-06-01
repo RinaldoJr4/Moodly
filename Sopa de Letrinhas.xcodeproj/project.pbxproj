@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A3B13A42A26256F00DB2DBE /* MoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3B13A32A26256F00DB2DBE /* MoodView.swift */; };
 		D33849502A22AA8D00072D18 /* LembretesPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D338494F2A22AA8D00072D18 /* LembretesPopUpView.swift */; };
 		D351D4622A27D1E700C6F311 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351D4612A27D1E700C6F311 /* NotificationManager.swift */; };
 		D35A6E232A226BB400513FFF /* MakeTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35A6E222A226BB400513FFF /* MakeTaskView.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A3B13A32A26256F00DB2DBE /* MoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodView.swift; sourceTree = "<group>"; };
 		D338494F2A22AA8D00072D18 /* LembretesPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LembretesPopUpView.swift; sourceTree = "<group>"; };
 		D351D4612A27D1E700C6F311 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		D35A6E222A226BB400513FFF /* MakeTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeTaskView.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				D3D81DF12A1FA4EE0010A554 /* BoardView.swift */,
 				D3BC2AD42A21425D00BA6B2D /* TodoView.swift */,
 				D35A6E222A226BB400513FFF /* MakeTaskView.swift */,
+				5A3B13A32A26256F00DB2DBE /* MoodView.swift */,
 				D3D81DEB2A1F95DB0010A554 /* CalendarioView.swift */,
 				D3D81DED2A1F961E0010A554 /* StatusView.swift */,
 				D3D81DEF2A1F964E0010A554 /* LembretesView.swift */,
@@ -197,6 +200,7 @@
 				D3D81DE72A1E55E30010A554 /* Calendar.swift in Sources */,
 				D3D81DEE2A1F961E0010A554 /* StatusView.swift in Sources */,
 				D36004F42A02C2DB004E19CF /* ContentView.swift in Sources */,
+				5A3B13A42A26256F00DB2DBE /* MoodView.swift in Sources */,
 				D3CE73162A1D733B004F91A8 /* OnboardingView.swift in Sources */,
 				D3D81DF02A1F964E0010A554 /* LembretesView.swift in Sources */,
 				D3D81DEC2A1F95DB0010A554 /* CalendarioView.swift in Sources */,
@@ -337,7 +341,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Sopa de Letrinhas/Preview Content\"";
-				DEVELOPMENT_TEAM = B6XWN7H84M;
+				DEVELOPMENT_TEAM = VNH67NDAE6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Sopa-de-Letrinhas-Info.plist";
@@ -350,6 +354,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "br.ufpe.cin.academy-rsbj.Sopa-de-Letrinhas";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -369,7 +374,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Sopa de Letrinhas/Preview Content\"";
-				DEVELOPMENT_TEAM = B6XWN7H84M;
+				DEVELOPMENT_TEAM = VNH67NDAE6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Sopa-de-Letrinhas-Info.plist";
@@ -382,6 +387,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "br.ufpe.cin.academy-rsbj.Sopa-de-Letrinhas";
 				PRODUCT_NAME = "$(TARGET_NAME)";
