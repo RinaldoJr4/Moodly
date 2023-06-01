@@ -34,6 +34,7 @@ struct TodoView: View {
     @AppStorage("creationDates") var creationDatesStored : [Date] = [Date()]
     @State var count = 0
     
+    @AppStorage("onboarding") var didOnboardingHappened = false
     
     var currentDate: Date
     
@@ -126,7 +127,7 @@ struct TodoView: View {
                             isCompletedsStored = [false]
                             creationDatesStored = [Date()]
                         }
-                        else if namessStored == [""] {
+                        else if namessStored == [""] && didOnboardingHappened{
                             namessStored.removeFirst()
                             isDeletedsStored.removeFirst()
                             isCompletedsStored.removeFirst()
@@ -189,7 +190,9 @@ struct TaskViewCell : View {
                     .padding(.trailing, 24)
                     .onTapGesture {
                         task.isDeleted.toggle()
-                        isDeletedsStored[task.index] = true
+                        if task.index != isDeletedsStored.count {
+                            isDeletedsStored[task.index] = true
+                        }
                     }
             }.padding(.leading, 10)
                 .frame(height: 80)

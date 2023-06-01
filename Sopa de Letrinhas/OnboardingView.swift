@@ -11,6 +11,11 @@ struct OnboardingView: View {
     @Environment(\.presentationMode) var presentation
     @AppStorage("onboarding") var didOnboardingHappened = false
     @StateObject private var viewRouter = ViewRouter()
+    
+    @AppStorage("names") var namessStored : [String] = ["Teste Persistencia"]
+    @AppStorage("isCompleteds") var isCompletedsStored : [Bool] = [false]
+    @AppStorage("isDeleteds") var isDeletedsStored : [Bool] = [false]
+    @AppStorage("creationDates") var creationDatesStored : [Date] = [Date()]
 
     var body: some View {
         VStack {
@@ -31,6 +36,13 @@ struct OnboardingView: View {
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(Color.black, lineWidth: 1)
                 )
+        .onAppear{
+            namessStored = ["Onboarding"]
+            isDeletedsStored = [false]
+            isCompletedsStored = [true]
+            creationDatesStored = [Date()]
+            
+        }
     }
 }
 

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@main
+ @main
 struct Sopa_de_LetrinhasApp: App {
     
     @StateObject var dataController = CoreDataViewModel()
