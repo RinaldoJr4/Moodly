@@ -13,7 +13,7 @@ struct MainView: View {
     @State var shouldShow = false
     @State var birthDate = Date.now
     
-    @EnvironmentObject var currentStatus2: MoodMangr
+    @EnvironmentObject var currentStatus: MoodManager
 
     
     var body: some View {
@@ -50,7 +50,7 @@ struct MainView: View {
                             Image("postitInteiro")
                                 .resizable()
                             StatusView(status: "tô triste")
-                                .environmentObject(currentStatus2)
+                                .environmentObject(currentStatus)
                         }.padding(.vertical,geo.size.height/30)
                         ZStack{
                             Image("postitDobrado")

@@ -17,7 +17,7 @@ struct Sopa_de_LetrinhasApp: App {
     @AppStorage("isDeleteds") var isDeletedsStored : [Bool] = [false]
     @AppStorage("creationDates") var creationDatesStored : [Date] = [Date()]
     
-    let currentStatus2: MoodMangr = MoodMangr()
+    let currentStatus2: MoodManager = MoodManager()
 
 
     

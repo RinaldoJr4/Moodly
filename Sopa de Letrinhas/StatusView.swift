@@ -8,13 +8,13 @@
 import SwiftUI
 
 
-class MoodMangr: ObservableObject {
+class MoodManager: ObservableObject {
     @Published var currentStatus = "sad"
 }
 
 struct StatusView: View {
     
-    @EnvironmentObject var currentStatus: MoodMangr
+    @EnvironmentObject var currentStatus: MoodManager
     
     @State var shouldShow = false
     @State var dictionaryStatus = ["sad":"😭", "happy":"🤩"]
