@@ -1,0 +1,400 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D3190CCA2AB6084C007B4C02 /* PumpkinCheesecake.otf in Resources */ = {isa = PBXBuildFile; fileRef = D3190CC92AB6084C007B4C02 /* PumpkinCheesecake.otf */; };
+		D31AD3A22AB60626006AA7FE /* MoodlyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31AD3A12AB60626006AA7FE /* MoodlyApp.swift */; };
+		D31AD3A62AB60627006AA7FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D31AD3A52AB60627006AA7FE /* Assets.xcassets */; };
+		D31AD3A92AB60627006AA7FE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D31AD3A82AB60627006AA7FE /* Preview Assets.xcassets */; };
+		D31AD3BF2AB6064F006AA7FE /* SejaPremium.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31AD3B02AB6064F006AA7FE /* SejaPremium.swift */; };
+		D31AD3C02AB6064F006AA7FE /* MoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31AD3B12AB6064F006AA7FE /* MoodView.swift */; };
+		D31AD3C12AB6064F006AA7FE /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31AD3B22AB6064F006AA7FE /* NotificationManager.swift */; };
+		D31AD3C22AB6064F006AA7FE /* MakeTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31AD3B32AB6064F006AA7FE /* MakeTaskView.swift */; };
+		D31AD3C32AB6064F006AA7FE /* LembretesPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31AD3B42AB6064F006AA7FE /* LembretesPopUpView.swift */; };
+		D31AD3C52AB6064F006AA7FE /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31AD3B72AB6064F006AA7FE /* OnboardingView.swift */; };
+		D31AD3C62AB6064F006AA7FE /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31AD3B82AB6064F006AA7FE /* StatusView.swift */; };
+		D31AD3C72AB6064F006AA7FE /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31AD3B92AB6064F006AA7FE /* TodoView.swift */; };
+		D31AD3C82AB6064F006AA7FE /* LembretesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31AD3BA2AB6064F006AA7FE /* LembretesView.swift */; };
+		D31AD3C92AB6064F006AA7FE /* CalendarioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31AD3BB2AB6064F006AA7FE /* CalendarioView.swift */; };
+		D31AD3CA2AB6064F006AA7FE /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31AD3BC2AB6064F006AA7FE /* MainView.swift */; };
+		D31AD3CB2AB6064F006AA7FE /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31AD3BD2AB6064F006AA7FE /* BoardView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D3190CC82AB60798007B4C02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D3190CC92AB6084C007B4C02 /* PumpkinCheesecake.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PumpkinCheesecake.otf; sourceTree = "<group>"; };
+		D31AD39E2AB60626006AA7FE /* Moodly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moodly.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D31AD3A12AB60626006AA7FE /* MoodlyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodlyApp.swift; sourceTree = "<group>"; };
+		D31AD3A52AB60627006AA7FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D31AD3A82AB60627006AA7FE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D31AD3B02AB6064F006AA7FE /* SejaPremium.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SejaPremium.swift; sourceTree = "<group>"; };
+		D31AD3B12AB6064F006AA7FE /* MoodView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodView.swift; sourceTree = "<group>"; };
+		D31AD3B22AB6064F006AA7FE /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		D31AD3B32AB6064F006AA7FE /* MakeTaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeTaskView.swift; sourceTree = "<group>"; };
+		D31AD3B42AB6064F006AA7FE /* LembretesPopUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LembretesPopUpView.swift; sourceTree = "<group>"; };
+		D31AD3B72AB6064F006AA7FE /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		D31AD3B82AB6064F006AA7FE /* StatusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
+		D31AD3B92AB6064F006AA7FE /* TodoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
+		D31AD3BA2AB6064F006AA7FE /* LembretesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LembretesView.swift; sourceTree = "<group>"; };
+		D31AD3BB2AB6064F006AA7FE /* CalendarioView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarioView.swift; sourceTree = "<group>"; };
+		D31AD3BC2AB6064F006AA7FE /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		D31AD3BD2AB6064F006AA7FE /* BoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D31AD39B2AB60626006AA7FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D31AD3952AB60626006AA7FE = {
+			isa = PBXGroup;
+			children = (
+				D31AD3A02AB60626006AA7FE /* Moodly */,
+				D31AD39F2AB60626006AA7FE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D31AD39F2AB60626006AA7FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D31AD39E2AB60626006AA7FE /* Moodly.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D31AD3A02AB60626006AA7FE /* Moodly */ = {
+			isa = PBXGroup;
+			children = (
+				D3190CC82AB60798007B4C02 /* Info.plist */,
+				D3190CC92AB6084C007B4C02 /* PumpkinCheesecake.otf */,
+				D31AD3A12AB60626006AA7FE /* MoodlyApp.swift */,
+				D31AD3BD2AB6064F006AA7FE /* BoardView.swift */,
+				D31AD3BB2AB6064F006AA7FE /* CalendarioView.swift */,
+				D31AD3B42AB6064F006AA7FE /* LembretesPopUpView.swift */,
+				D31AD3BA2AB6064F006AA7FE /* LembretesView.swift */,
+				D31AD3BC2AB6064F006AA7FE /* MainView.swift */,
+				D31AD3B32AB6064F006AA7FE /* MakeTaskView.swift */,
+				D31AD3B12AB6064F006AA7FE /* MoodView.swift */,
+				D31AD3B22AB6064F006AA7FE /* NotificationManager.swift */,
+				D31AD3B72AB6064F006AA7FE /* OnboardingView.swift */,
+				D31AD3B02AB6064F006AA7FE /* SejaPremium.swift */,
+				D31AD3B82AB6064F006AA7FE /* StatusView.swift */,
+				D31AD3B92AB6064F006AA7FE /* TodoView.swift */,
+				D31AD3A52AB60627006AA7FE /* Assets.xcassets */,
+				D31AD3A72AB60627006AA7FE /* Preview Content */,
+			);
+			path = Moodly;
+			sourceTree = "<group>";
+		};
+		D31AD3A72AB60627006AA7FE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D31AD3A82AB60627006AA7FE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D31AD39D2AB60626006AA7FE /* Moodly */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D31AD3AC2AB60627006AA7FE /* Build configuration list for PBXNativeTarget "Moodly" */;
+			buildPhases = (
+				D31AD39A2AB60626006AA7FE /* Sources */,
+				D31AD39B2AB60626006AA7FE /* Frameworks */,
+				D31AD39C2AB60626006AA7FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Moodly;
+			productName = Moodly;
+			productReference = D31AD39E2AB60626006AA7FE /* Moodly.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D31AD3962AB60626006AA7FE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					D31AD39D2AB60626006AA7FE = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = D31AD3992AB60626006AA7FE /* Build configuration list for PBXProject "Moodly" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D31AD3952AB60626006AA7FE;
+			productRefGroup = D31AD39F2AB60626006AA7FE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D31AD39D2AB60626006AA7FE /* Moodly */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D31AD39C2AB60626006AA7FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D31AD3A92AB60627006AA7FE /* Preview Assets.xcassets in Resources */,
+				D3190CCA2AB6084C007B4C02 /* PumpkinCheesecake.otf in Resources */,
+				D31AD3A62AB60627006AA7FE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D31AD39A2AB60626006AA7FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D31AD3C12AB6064F006AA7FE /* NotificationManager.swift in Sources */,
+				D31AD3C22AB6064F006AA7FE /* MakeTaskView.swift in Sources */,
+				D31AD3C62AB6064F006AA7FE /* StatusView.swift in Sources */,
+				D31AD3C92AB6064F006AA7FE /* CalendarioView.swift in Sources */,
+				D31AD3C52AB6064F006AA7FE /* OnboardingView.swift in Sources */,
+				D31AD3A22AB60626006AA7FE /* MoodlyApp.swift in Sources */,
+				D31AD3C72AB6064F006AA7FE /* TodoView.swift in Sources */,
+				D31AD3C82AB6064F006AA7FE /* LembretesView.swift in Sources */,
+				D31AD3BF2AB6064F006AA7FE /* SejaPremium.swift in Sources */,
+				D31AD3C32AB6064F006AA7FE /* LembretesPopUpView.swift in Sources */,
+				D31AD3CB2AB6064F006AA7FE /* BoardView.swift in Sources */,
+				D31AD3CA2AB6064F006AA7FE /* MainView.swift in Sources */,
+				D31AD3C02AB6064F006AA7FE /* MoodView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D31AD3AA2AB60627006AA7FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D31AD3AB2AB60627006AA7FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D31AD3AD2AB60627006AA7FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Moodly/Preview Content\"";
+				DEVELOPMENT_TEAM = B6XWN7H84M;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Moodly/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.ufpe.cin.academy-rsbj.Moodly";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D31AD3AE2AB60627006AA7FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Moodly/Preview Content\"";
+				DEVELOPMENT_TEAM = B6XWN7H84M;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Moodly/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.ufpe.cin.academy-rsbj.Moodly";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D31AD3992AB60626006AA7FE /* Build configuration list for PBXProject "Moodly" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D31AD3AA2AB60627006AA7FE /* Debug */,
+				D31AD3AB2AB60627006AA7FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D31AD3AC2AB60627006AA7FE /* Build configuration list for PBXNativeTarget "Moodly" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D31AD3AD2AB60627006AA7FE /* Debug */,
+				D31AD3AE2AB60627006AA7FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D31AD3962AB60626006AA7FE /* Project object */;
+}
